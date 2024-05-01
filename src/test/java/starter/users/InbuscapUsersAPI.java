@@ -3,7 +3,6 @@ package starter.users;
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Steps;
 import starter.utils.Constants;
 
 import java.io.File;
@@ -22,7 +21,7 @@ public class InbuscapUsersAPI {
     @Step("Create users with valid json")
     public void createUsers(File json){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ1NTcxNjYsImlhdCI6MTcxNDU0NjM2NiwiaWQiOiIxIiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6ZmFsc2V9._KWRyd6wdQVLSP8nBCagjDVVMdM9-BHZnKCqz4LTxrg")
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ1NjAyMTIsImlhdCI6MTcxNDU0OTQxMiwiaWQiOiIxIiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6ZmFsc2V9.UDoUnK69goERvYG9__lQqsuAjKo_oFcHMEVTumFm908")
                 .contentType(ContentType.JSON).body(json);
     }
     @Step("Login user by json")
