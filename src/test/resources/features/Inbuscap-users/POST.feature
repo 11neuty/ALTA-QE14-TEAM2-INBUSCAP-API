@@ -10,7 +10,7 @@ Feature: POST Users
 
     @Test
   Scenario: As user i can login with valid email or phone number
-    Given Login user by json UsersDataLogin1.json
+    Given Login user by json UserDataLogin2.json
     When  Send request login users
     Then  Status code should be 200
 

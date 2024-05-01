@@ -12,6 +12,7 @@ public class InbuscapUsersAPI {
     public static String CREATE_USERS = Constants.BASE_URL + "/users";
     public static String LOGIN_USERS = Constants.BASE_URL + "/login";
 
+
     @Step("Get users with valid page")
     public void getUsersWithValidPage(String path){
         SerenityRest.given()
@@ -30,5 +31,25 @@ public class InbuscapUsersAPI {
         SerenityRest.given()
                 .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ1NTcxNjYsImlhdCI6MTcxNDU0NjM2NiwiaWQiOiIxIiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6ZmFsc2V9._KWRyd6wdQVLSP8nBCagjDVVMdM9-BHZnKCqz4LTxrg")
                 .contentType(ContentType.JSON).body(json);
+    }
+
+    @Step("Update Data by multipart form data")
+    public void UpdateData(String number, String password, String ktp, String npwp, File avatar){
+        SerenityRest.given().log().all()
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ1ODY0MTUsImlhdCI6MTcxNDU3NTYxNSwiaWQiOiI2MCIsImlzX2FjdGl2ZSI6MCwiaXNfYWRtaW4iOmZhbHNlfQ._s1aas8slYMhCYJZlQowGySQ6O96tzuX1smw_WWd0aY")
+                .contentType("multipart/form-data")
+                .multiPart("handphone", number)
+                .multiPart("password", password)
+                .multiPart("ktp", ktp)
+                .multiPart("npwp", npwp)
+                .multiPart("avatar", avatar)
+                .post(InbuscapUsersAPI.CREATE_USERS);
+
+    }
+    @Step("Delete User with valid path")
+    public void DeleteUser(String path){
+        SerenityRest.given()
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ1ODY0MTUsImlhdCI6MTcxNDU3NTYxNSwiaWQiOiI2MCIsImlzX2FjdGl2ZSI6MCwiaXNfYWRtaW4iOmZhbHNlfQ._s1aas8slYMhCYJZlQowGySQ6O96tzuX1smw_WWd0aY")
+                .pathParam("path",path);
     }
 }
