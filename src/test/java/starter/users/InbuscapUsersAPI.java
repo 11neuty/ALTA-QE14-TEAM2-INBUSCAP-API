@@ -16,7 +16,7 @@ public class InbuscapUsersAPI {
     @Step("Get users with valid page")
     public void getUsersWithValidPage(String path){
         SerenityRest.given()
-                .header("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ1NjAyMTIsImlhdCI6MTcxNDU0OTQxMiwiaWQiOiIxIiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6ZmFsc2V9.UDoUnK69goERvYG9__lQqsuAjKo_oFcHMEVTumFm908")
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ1NjAyMTIsImlhdCI6MTcxNDU0OTQxMiwiaWQiOiIxIiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6ZmFsc2V9.UDoUnK69goERvYG9__lQqsuAjKo_oFcHMEVTumFm908")
                 .pathParam("path", path);
     }
     @Step("Create users with valid json")

@@ -15,7 +15,7 @@ public class GetUsersStepDef {
     @When("Send request get user")
     public void sendRequestGetUser(){
         SerenityRest.when()
-                .post(InbuscapUsersAPI.GET_PATH);
+                .get(InbuscapUsersAPI.GET_PATH);
     }
 
 }
