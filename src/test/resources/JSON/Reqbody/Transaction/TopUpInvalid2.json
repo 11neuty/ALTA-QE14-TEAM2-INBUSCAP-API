@@ -1,4 +1,4 @@
 {
-  "payment_type": "danamon",
+  "payment_type": 12345,
   "amount": 5000000
 }
