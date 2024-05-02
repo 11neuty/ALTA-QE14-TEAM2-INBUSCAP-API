@@ -13,6 +13,8 @@ public class Constants {
         public static String AVATAR = FORM + "/Avatar/";
         public static String KTP = FORM + "/KTP";
         public static String NPWP = FORM + "/NPWP";
+        public static String IMAGE = FORM + "/IMAGE";
+        public static String PROPOSAL = FORM + "/PROPOSAL";
     }
 
 
