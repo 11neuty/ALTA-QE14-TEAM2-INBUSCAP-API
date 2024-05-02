@@ -2,6 +2,7 @@ package starter.proposals;
 
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.annotations.Steps;
 import starter.utils.Constants;
 
 import java.io.File;
@@ -59,11 +60,11 @@ public class InbuscapProposalsAPI {
 
     }
     @Step("Put proposal by id and multipart form data")
-    public void putProposal(int proposal_id, File image, String title,String desc, int capital, File proposal ){
+    public void putProposal(int proposals_id, File image, String title,String desc, int capital, File proposal ){
         SerenityRest.given().log().all()
                 .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ1ODY0MTUsImlhdCI6MTcxNDU3NTYxNSwiaWQiOiI2MCIsImlzX2FjdGl2ZSI6MCwiaXNfYWRtaW4iOmZhbHNlfQ._s1aas8slYMhCYJZlQowGySQ6O96tzuX1smw_WWd0aY")
+                .pathParam("proposals_id", proposals_id)
                 .contentType("multipart/form-data")
-                .pathParam("proposal_id", proposal_id)
                 .multiPart("image", image)
                 .multiPart("title", title)
                 .multiPart("descripption", desc)
@@ -71,5 +72,11 @@ public class InbuscapProposalsAPI {
                 .multiPart("proposal", proposal)
                 .post(InbuscapProposalsAPI.PROPOSALS_ID);
 
+    }
+    @Step("Delete proposals by proposal id")
+    public void deleteProposal(int proposals_id){
+        SerenityRest.given().log().all()
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ1ODY0MTUsImlhdCI6MTcxNDU3NTYxNSwiaWQiOiI2MCIsImlzX2FjdGl2ZSI6MCwiaXNfYWRtaW4iOmZhbHNlfQ._s1aas8slYMhCYJZlQowGySQ6O96tzuX1smw_WWd0aY")
+                .pathParam("proposals_id", proposals_id);
     }
 }

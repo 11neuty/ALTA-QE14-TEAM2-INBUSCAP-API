@@ -2,6 +2,8 @@ package starter.users;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import io.cucumber.java.sl.In;
+import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.junit.annotations.Concurrent;
 import starter.proposals.InbuscapProposalsAPI;
@@ -21,5 +23,7 @@ public class PutProposalStepDef {
 
     @When("Send request edit proposal")
     public void sendRequestEditProposal() {
+        SerenityRest.when()
+                .post(InbuscapProposalsAPI.PROPOSALS_ID);
     }
 }
