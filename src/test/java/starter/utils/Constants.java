@@ -11,10 +11,11 @@ public class Constants {
         public static String JSON_SCHEMA = JSON + "/JsonSchema/";
         public static String FORM = DIR + "/src/test/resources/FORM";
         public static String AVATAR = FORM + "/Avatar/";
-        public static String KTP = FORM + "/KTP";
-        public static String NPWP = FORM + "/NPWP";
-        public static String IMAGE = FORM + "/IMAGE";
-        public static String PROPOSAL = FORM + "/PROPOSAL";
+        public static String KTP = FORM + "/KTP/";
+        public static String NPWP = FORM + "/NPWP/";
+        public static String IMAGE = FORM + "/IMAGE/";
+        public static String PROPOSAL = FORM + "/PROPOSAL/";
+        public static String REPORT = FORM + "/REPORT/";
     }
 
 
