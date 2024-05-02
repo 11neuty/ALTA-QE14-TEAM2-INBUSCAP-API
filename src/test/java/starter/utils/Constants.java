@@ -15,5 +15,8 @@ public class Constants {
         public static String IMAGE = FORM + "/IMAGE/";
         public static String PROPOSAL = FORM + "/PROPOSAL/";
         public static String REPORT = FORM + "/REPORT/";
+
+        public static String TOKEN = "";
+        public static String TOKEN_USER = "Bearer " + TOKEN;
 }
 
