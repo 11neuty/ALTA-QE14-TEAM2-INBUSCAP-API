@@ -21,7 +21,7 @@ public class PostInvestmentsStepDef {
     @When("Send request add new investment")
     public void sendRequestAddNewInvestment() {
         SerenityRest.when()
-                .post(InvestmentsAPI.ADD_INVESMENT);
+                .post(InvestmentsAPI.ADD_INVESTMENT);
     }
 
     @Given("Add new investment with invalid proposal id {string}")

@@ -11,8 +11,8 @@ import java.io.File;
 public class InvestmentsAPI {
     public static String INVESTMENTS = Constants.BASE_URL+"investments?page={page}";
     public static String DETAIL_INVESTED = Constants.BASE_URL+"investments/{proposal_id}";
-    public static String ADD_INVESMENT = Constants.BASE_URL+"investments";
-    public static String DELETE_INVESMENT = Constants.BASE_URL+"investments?proposal_id={proposal_id}";
+    public static String ADD_INVESTMENT = Constants.BASE_URL+"investments";
+    public static String DELETE_INVESTMENT = Constants.BASE_URL+"investments?proposal_id={proposal_id}";
 
     @Step("Get all investment proposal with valid parameter page")
     public void getAllInvestmentProposalWithValidParameterPage(int page){
@@ -53,12 +53,14 @@ public class InvestmentsAPI {
     @Step("Delete investment with valid proposal id")
     public void deleteInvestmentWithValidProposalId(int proposal_id){
         SerenityRest.given()
-                .pathParam("proposal id", proposal_id);
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ2MzM0NTgsImlhdCI6MTcxNDYyMjY1OCwiaWQiOiIxIiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6ZmFsc2V9.GwaHYfouSIwOkC-t3063IdYfqd2-Bt7sV_bMi9TV0BE")
+                .pathParam("proposal_id", proposal_id);
     }
     @Step("Delete investment with invalid proposal id")
     public void deleteInvestmentWithInvalidProposalId(String proposal_id){
         SerenityRest.given()
-                .pathParam("proposal id", proposal_id);
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ2MzM0NTgsImlhdCI6MTcxNDYyMjY1OCwiaWQiOiIxIiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6ZmFsc2V9.GwaHYfouSIwOkC-t3063IdYfqd2-Bt7sV_bMi9TV0BE")
+                .pathParam("proposal_id", proposal_id);
     }
 
 }

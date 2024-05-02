@@ -17,7 +17,7 @@ public class DeleteInvestmentStepDef {
     @When("Send delete investment")
     public void sendDeleteInvestment() {
         SerenityRest.when()
-                .delete(InvestmentsAPI.DELETE_INVESMENT);
+                .delete(InvestmentsAPI.DELETE_INVESTMENT);
     }
 
     @Given("Delete data investment with invalid proposal id {string}")

@@ -9,7 +9,7 @@ Feature: Post Investment
   Scenario Outline: Add new investment with invalid proposal id
     Given Add new investment with invalid proposal id "<json>"
     When Send request add new investment
-    Then Status code should be 201
+    Then Status code should be 400
     Examples:
       | json           |
       |AddInvalid1.json|
@@ -20,7 +20,7 @@ Feature: Post Investment
   Scenario Outline: Add new investment with invalid amount
     Given Add new investment with invalid amount "<json>"
     When Send request add new investment
-    Then Status code should be 201
+    Then Status code should be 400
     Examples:
       | json           |
       |AddInvalid4.json|
@@ -30,7 +30,7 @@ Feature: Post Investment
   Scenario Outline: Add new investment with invalid proposal id and amount
     Given Add new investment with invalid proposal id and amount "<json>"
     When Send request add new investment
-    Then Status code should be 201
+    Then Status code should be 400
     Examples:
       | json           |
       |AddInvalid6.json|
