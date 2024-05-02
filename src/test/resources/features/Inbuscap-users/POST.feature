@@ -26,3 +26,4 @@ Feature: POST Users
     Given  Login user by json UserBadDataLogin1.json
     When   Send request login users
     Then   Status code should be 404
+

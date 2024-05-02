@@ -4,7 +4,7 @@ Feature: Post Feature
   #POSITIVE TEST CASE
   @Test
   Scenario: Create new proposals with valid multipart data form
-    Given   Create proposals by multipart data form image "cupangImage.jpg", title "Ikan Cupang Pak Amin", description "Jualan ikan hebat", capital 1000000, share 10, proposal "cupangProposal.pdf"
+    Given   Create proposals by multipart data form image "cupangImage.jpg", title "Ikan Cupang Pak Amin", description "Jualan ikan hebat", capital 1000000, share 10, proposal "CupangProposal.pdf"
     When    Send request create proposal
     Then    Status code should be 201
 
@@ -16,7 +16,7 @@ Feature: Post Feature
   #NEGATIVE TEST CASE
   @Test
   Scenario: Create new proposals with invalid multipart data form
-    Given   Create proposals by multipart data form image "cupang.jpg", title "Ikan Cupang Pak Amin", description "Jualan ikan hebat", capital 1000000, share 10, proposal "cupang.pdf"
+    Given   Create proposals by multipart data form image "cupangImage.jpg", title "Ikan Cupang Pak Amin", description "Jualan ikan hebat", capital 1000000, share 10, proposal "cupangProposal.pdf"
     When    Send request create proposal
     Then    Status code should be 400
 

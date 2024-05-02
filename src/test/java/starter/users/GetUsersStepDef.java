@@ -2,6 +2,8 @@ package starter.users;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 

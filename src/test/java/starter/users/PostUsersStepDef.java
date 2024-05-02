@@ -3,6 +3,8 @@ package starter.users;
 import io.cucumber.java.bs.I;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.utils.Constants;
@@ -34,7 +36,12 @@ public class PostUsersStepDef {
 
     @When("Send request login users")
     public void sendRequestLoginUsers() {
-        SerenityRest.when()
+       Response response =  SerenityRest.when()
                 .post(InbuscapUsersAPI.LOGIN_USERS);
+       JsonPath jsonpath = response.jsonPath();
+       String token = jsonpath.get("data.token");
+        System.out.println(token);
+        Constants.TOKEN = token;
+
     }
 }
