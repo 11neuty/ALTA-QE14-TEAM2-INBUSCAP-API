@@ -1,25 +1,12 @@
 Feature: Transaction
 
-  #GET (+) TRANSACTION
-  @Project
-  Scenario: Get available returns from investment with valid path
-    Given Get available returns from investment with valid path "returns"
-    When Send request get available returns
-    Then Status code should be 200
-
-  #GET (-) TRANSACTION
-  @Project
-  Scenario: Get available returns from investment with invalid path
-    Given Get available returns from investment with invalid path "return"
-    When Send request get available returns
-    Then Status code should be 404
-
    #TOP UP (+)
   @Project
-  Scenario: Top Up with valid data json
+    Scenario: Top Up with valid data json
     Given Top Up with valid data "TopUpValid.json"
     When Send request Top Up
     Then Status code should be 201
+    And Response body message was "transaction is created"
 
   #TOP UP (-)
   @Project
@@ -75,5 +62,20 @@ Feature: Transaction
     Given Withdraw with invalid bank, bank account and amount "WithdrawInvalid4.json"
     When Send request withdraw
     Then Status code should be 400
+
+    #GET (+) TRANSACTION
+  @Project
+  Scenario: Get available returns from investment with valid path
+    Given Get available returns from investment with valid path "returns"
+    When Send request get available returns
+    Then Status code should be 200
+
+  #GET (-) TRANSACTION
+  @Project
+  Scenario: Get available returns from investment with invalid path
+    Given Get available returns from investment with invalid path "return"
+    When Send request get available returns
+    Then Status code should be 404
+
 
 
