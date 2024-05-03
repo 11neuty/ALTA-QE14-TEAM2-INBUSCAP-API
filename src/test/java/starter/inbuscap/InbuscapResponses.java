@@ -1,6 +1,6 @@
-package starter.users;
+package starter.inbuscap;
 
-public class InbuscapUsersResponses {
+public class InbuscapResponses {
     public static String NAME = "data.fullname";
     public static String EMAIL = "data.email";
 }

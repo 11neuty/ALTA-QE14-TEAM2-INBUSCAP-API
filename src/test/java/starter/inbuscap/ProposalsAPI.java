@@ -1,13 +1,12 @@
-package starter.proposals;
+package starter.inbuscap;
 
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Steps;
 import starter.utils.Constants;
 
 import java.io.File;
 
-public class InbuscapProposalsAPI {
+public class ProposalsAPI {
     public static String GET_PATH = Constants.BASE_URL + "/{path}";
     public static String GET_PARAM = Constants.BASE_URL + "myproposals?{param}";
     public static String PROPOSALS_ID = Constants.BASE_URL + "/proposals/{proposals_id}";
@@ -45,7 +44,7 @@ public class InbuscapProposalsAPI {
                 .multiPart("capital", capital)
                 .multiPart("share", share)
                 .multiPart("proposal", proposal)
-                .post(InbuscapProposalsAPI.PROPOSALS);
+                .post(ProposalsAPI.PROPOSALS);
     }
     @Step("Create report by multipart form data")
     public void createReport(int proposal_id, String date, File report, int amount){
@@ -56,7 +55,7 @@ public class InbuscapProposalsAPI {
                 .multiPart("date", date)
                 .multiPart("document", report)
                 .multiPart("amount", amount)
-                .post(InbuscapProposalsAPI.REPORT);
+                .post(ProposalsAPI.REPORT);
 
     }
     @Step("Put proposal by id and multipart form data")
@@ -70,7 +69,7 @@ public class InbuscapProposalsAPI {
                 .multiPart("descripption", desc)
                 .multiPart("capital", capital)
                 .multiPart("proposal", proposal)
-                .post(InbuscapProposalsAPI.PROPOSALS_ID);
+                .post(ProposalsAPI.PROPOSALS_ID);
 
     }
     @Step("Delete proposals by proposal id")

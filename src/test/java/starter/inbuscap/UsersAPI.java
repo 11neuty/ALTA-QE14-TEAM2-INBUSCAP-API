@@ -1,4 +1,4 @@
-package starter.users;
+package starter.inbuscap;
 
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
@@ -7,7 +7,7 @@ import starter.utils.Constants;
 
 import java.io.File;
 
-public class InbuscapUsersAPI {
+public class UsersAPI {
     public static String GET_PATH = Constants.BASE_URL + "/{path}";
     public static String CREATE_USERS = Constants.BASE_URL + "/users";
     public static String LOGIN_USERS = Constants.BASE_URL + "/login";
@@ -48,7 +48,7 @@ public class InbuscapUsersAPI {
                 .multiPart("ktp", ktp)
                 .multiPart("npwp", npwp)
                 .multiPart("avatar", avatar)
-                .post(InbuscapUsersAPI.CREATE_USERS);
+                .post(UsersAPI.CREATE_USERS);
 
     }
     @Step("Delete User with valid path")

@@ -11,7 +11,7 @@ Feature: Users
    #LOGIN ACCOUNT
   @Test
   Scenario: As user i can login with valid email or phone number
-    Given Login user by json UserDataLogin1.json
+    Given Login user by json UserDataLogin3.json
     When  Send request login users
     Then  Status code should be 200
 
@@ -29,7 +29,7 @@ Feature: Users
     When   Send request login users
     Then   Status code should be 404
 
-#GET FEATURE ----------------------------------------------------------------------------------------------------------
+#GET ----------------------------------------------------------------------------------------------------------
   @Test
   #POSITIVE TEST CASE
   Scenario: As user i can get user with valid path
@@ -46,7 +46,7 @@ Feature: Users
     When  Send request get user
     Then  Status code should be 404
 
-#PUT FEATURE -----------------------------------------------------------------------------------------------------------
+#PUT -----------------------------------------------------------------------------------------------------------
   @Test
   #POSITIVE TEST CASE
   Scenario: Update users with valid multipart form data
@@ -60,7 +60,7 @@ Feature: Users
     When Send request update data
     Then Status code should be 400
 
-#DELETE FEATURE --------------------------------------------------------------------------------------------------------
+#DELETE --------------------------------------------------------------------------------------------------------
   @Test
   #POSITIVE TEST CASE
   Scenario: Delete user with valid path
