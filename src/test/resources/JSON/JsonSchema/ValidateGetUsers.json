@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "fullname": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "handphone": {
+          "type": "string"
+        },
+        "ktp": {
+          "type": "string"
+        },
+        "npwp": {
+          "type": "string"
+        },
+        "saldo": {
+          "type": "integer"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "photo_ktp": {
+          "type": "string"
+        },
+        "photo_npwp": {
+          "type": "string"
+        },
+        "photo_selfie": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fullname",
+        "email",
+        "handphone",
+        "ktp",
+        "npwp",
+        "saldo",
+        "avatar",
+        "photo_ktp",
+        "photo_npwp",
+        "photo_selfie"
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "code",
+    "data",
+    "message"
+  ]
+}

@@ -1,6 +1,7 @@
 package starter.users;
 
 import io.cucumber.java.bs.I;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
@@ -27,6 +28,7 @@ public class PostUsersStepDef {
     }
 
 
+
     @Given("Login user by json {}")
     public void loginUserByJsonLoginDataJson(String json) {
         File jsonFile = new File(Constants.REQ_BODY + json);
@@ -44,4 +46,6 @@ public class PostUsersStepDef {
         Constants.TOKEN = token;
 
     }
+
+
 }

@@ -18,7 +18,7 @@ public class InbuscapUsersAPI {
     @Step("Get users with valid page")
     public void getUsersWithValidPage(String path){
         SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ3MzA2NDgsImlhdCI6MTcxNDcxOTg0OCwiaWQiOiI5NSIsImlzX2FjdGl2ZSI6MCwiaXNfYWRtaW4iOmZhbHNlfQ.51SPjEBvqeJ5g_O6ZBUYqGMTxkrlvrgouU7kdVKMxu0")
                 .pathParam("path", path);
 
 
@@ -26,7 +26,6 @@ public class InbuscapUsersAPI {
     @Step("Create users with valid json")
     public void createUsers(File json){
         SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
                 .contentType(ContentType.JSON).body(json);
     }
     @Step("Login user by json")
@@ -38,10 +37,12 @@ public class InbuscapUsersAPI {
     }
 
     @Step("Update Data by multipart form data")
-    public void UpdateData(String number, String password, String ktp, String npwp, File avatar){
+    public void UpdateData(String fullname, String email, String number, String password, String ktp, String npwp, File avatar){
         SerenityRest.given().log().all()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ3Mjg5NDAsImlhdCI6MTcxNDcxODE0MCwiaWQiOiI5NSIsImlzX2FjdGl2ZSI6MCwiaXNfYWRtaW4iOmZhbHNlfQ.gIJcEF5Rgvbpa2Wwan_UDNqaaZd8D3o4u1QEKuReM1A")
                 .contentType("multipart/form-data")
+                .multiPart("fullname", fullname)
+                .multiPart("email", email)
                 .multiPart("handphone", number)
                 .multiPart("password", password)
                 .multiPart("ktp", ktp)
