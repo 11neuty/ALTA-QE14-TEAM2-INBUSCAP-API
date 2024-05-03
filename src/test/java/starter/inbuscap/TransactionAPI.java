@@ -23,7 +23,7 @@ public class TransactionAPI {
     @Step("Top Up with valid data")
     public void TopUpWithValidData(File json){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ3NjU5OTAsImlhdCI6MTcxNDc1NTE5MCwiaWQiOiI5NSIsImlzX2FjdGl2ZSI6MSwiaXNfYWRtaW4iOmZhbHNlfQ.nYoQdXBErS6_-gQwGCG498yaNG8AHK90MzWAvFMmzyA")
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ3Njc0NDksImlhdCI6MTcxNDc1NjY0OSwiaWQiOiI5NSIsImlzX2FjdGl2ZSI6MSwiaXNfYWRtaW4iOmZhbHNlfQ.IZWQcoKZ7lUtaQcUnmxWQvQLwEGJogg-0Xrq5ZC_n3A")
                 .contentType(ContentType.JSON)
                 .body(json);
     }
