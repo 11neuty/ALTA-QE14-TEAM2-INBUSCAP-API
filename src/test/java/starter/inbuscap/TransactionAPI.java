@@ -15,7 +15,7 @@ public class TransactionAPI {
     @Step("Top Up with valid data")
     public void TopUpWithValidData(File json){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ4MDU0NzQsImlhdCI6MTcxNDc5NDY3NCwiaWQiOiIxIiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6ZmFsc2V9.tkyUPTh5_oBZMxVB1bLoZz1KTBxYOzU61DfiNBQup7k")
+                .header("Authorization", Constants.TOKEN_USER)
                 .contentType(ContentType.JSON)
                 .body(json);
     }
@@ -23,7 +23,7 @@ public class TransactionAPI {
     @Step("Withdraw with valid data")
     public void WithdrawWithValidData(File json){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ4MDU0NzQsImlhdCI6MTcxNDc5NDY3NCwiaWQiOiIxIiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6ZmFsc2V9.tkyUPTh5_oBZMxVB1bLoZz1KTBxYOzU61DfiNBQup7k")
+                .header("Authorization", Constants.TOKEN_USER)
                 .contentType(ContentType.JSON)
                 .body(json);
     }
@@ -31,7 +31,7 @@ public class TransactionAPI {
     @Step("Get transaction")
     public void GetTransaction(String returns){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ4MDU0NzQsImlhdCI6MTcxNDc5NDY3NCwiaWQiOiIxIiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6ZmFsc2V9.tkyUPTh5_oBZMxVB1bLoZz1KTBxYOzU61DfiNBQup7k")
+                .header("Authorization", Constants.TOKEN_USER)
                 .pathParam("returns", returns);
     }
 }
