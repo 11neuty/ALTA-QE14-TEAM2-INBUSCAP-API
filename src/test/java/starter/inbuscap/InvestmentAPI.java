@@ -1,14 +1,13 @@
-package starter.investments;
+package starter.inbuscap;
 
 import io.restassured.http.ContentType;
-import net.serenitybdd.core.Serenity;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import starter.utils.Constants;
 
 import java.io.File;
 
-public class InvestmentsAPI {
+public class InvestmentAPI {
     public static String INVESTMENTS = Constants.BASE_URL+"investments?page={page}";
     public static String DETAIL_INVESTED = Constants.BASE_URL+"investments/{proposal_id}";
     public static String ADD_INVESTMENT = Constants.BASE_URL+"investments";
