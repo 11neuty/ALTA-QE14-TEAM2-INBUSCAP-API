@@ -11,8 +11,8 @@ public class VerificationsAPI {
     public static String USERS = Constants.BASE_URL + "/verifications/users";
     public static String USERS_ID = Constants.BASE_URL + "/verifications/users/{users_id}";
     public static String PROPOSALS_ID = Constants.BASE_URL + "verifications/proposals/{proposals_id}";
-    public static String GET_VERIFICATION_USERS = Constants.BASE_URL + "verifications/users?status={status}&page=(page}";
-    public static String GET_VERIFICATION_PROPOSALS = Constants.BASE_URL + "verifications/proposal?status={status}&page=(page}";
+    public static String GET_VERIFICATION_USERS = Constants.BASE_URL + "verifications/users?status={status}&page={page}";
+    public static String GET_VERIFICATION_PROPOSALS = Constants.BASE_URL + "verifications/proposal?status={status}&page={page}";
 
 
     @Step("Verifications users by valid multipart data form")
@@ -43,7 +43,7 @@ public class VerificationsAPI {
     @Step("Get verification with valid parameter status and page")
     public void getVerificationValid(int status, int page){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ4NDQ0NTksImlhdCI6MTcxNDgzMzY1OSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.9S0x_Yplpa64gUznO-acgrD6jbu6lt-0831FI9ThdDI")
+                .header("Authorization", Constants.TOKEN_USER)
                 .pathParam("status", status)
                 .pathParam("page", page);
     }
@@ -51,7 +51,7 @@ public class VerificationsAPI {
     @Step("Get verification with invalid parameter status and page")
     public void getVerificationInvalid(String status, String page){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ4NTE2NTgsImlhdCI6MTcxNDg0MDg1OCwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.5JqzMQPu_mqEA74Hyk6v-aiXS8TzWBEWjgIpazgPz0k")
+                .header("Authorization", Constants.TOKEN_USER)
                 .pathParam("status", status)
                 .pathParam("page", page);
     }
@@ -59,21 +59,21 @@ public class VerificationsAPI {
     @Step("Get verification with valid proposal id")
     public void getVerificationValidProposalId(int proposal_id){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ4NDQ0NTksImlhdCI6MTcxNDgzMzY1OSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.9S0x_Yplpa64gUznO-acgrD6jbu6lt-0831FI9ThdDI")
+                .header("Authorization", Constants.TOKEN_USER)
                 .pathParam("status", proposal_id);
     }
 
     @Step("Get verification with invalid proposal id")
     public void getVerificationInvalidProposalId(String proposal_id){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ4NDQ0NTksImlhdCI6MTcxNDgzMzY1OSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.9S0x_Yplpa64gUznO-acgrD6jbu6lt-0831FI9ThdDI")
+                .header("Authorization", Constants.TOKEN_USER)
                 .pathParam("status", proposal_id);
     }
 
     @Step("Get verification proposal with valid parameter status and page")
     public void getVerificationProposalValid(int status, int page){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ4NDQ0NTksImlhdCI6MTcxNDgzMzY1OSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.9S0x_Yplpa64gUznO-acgrD6jbu6lt-0831FI9ThdDI")
+                .header("Authorization", Constants.TOKEN_USER)
                 .pathParam("status", status)
                 .pathParam("page", page);
 
@@ -82,7 +82,7 @@ public class VerificationsAPI {
     @Step("Get verification proposal with invalid parameter status and page")
     public void getVerificationProposalInvalid(String status, String page){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ4NDQ0NTksImlhdCI6MTcxNDgzMzY1OSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.9S0x_Yplpa64gUznO-acgrD6jbu6lt-0831FI9ThdDI")
+                .header("Authorization", Constants.TOKEN_USER)
                 .pathParam("status", status)
                 .pathParam("page", page);
     }
