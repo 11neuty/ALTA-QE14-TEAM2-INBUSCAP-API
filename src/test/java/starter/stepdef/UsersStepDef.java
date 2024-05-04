@@ -76,6 +76,12 @@ public class UsersStepDef {
         File jsonFile = new File(Constants.JSON_SCHEMA + "Users/"+json);
         SerenityRest.and().body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
     }
+    @And("Validate json schema proposals {string}")
+    public void validateJsonSchemaProposals(String json) {
+        File jsonFile = new File(Constants.JSON_SCHEMA + "Proposals/"+json);
+        SerenityRest.and().body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
+    }
+
     // PUT
     @Given("Update data with valid multipart form data; full name {string}, email {string}, phone number {string}, password {string}, ktp {string}, npwp {string}, avatar {string}")
     public void UpdateDataWithMultiplePartForm(String name, String email, String number, String pass, String ktp, String npwp, String avatar){
@@ -86,6 +92,7 @@ public class UsersStepDef {
     public void sendRequestUpdateData() {
         SerenityRest.when().put(UsersAPI.CREATE_USERS);
     }
+
 
     // DELETE
     @Given("Delete user with path {string}")
@@ -103,4 +110,6 @@ public class UsersStepDef {
         SerenityRest.then()
                 .statusCode(statusCode);
     }
+
+
 }

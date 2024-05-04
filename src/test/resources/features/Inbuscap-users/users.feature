@@ -8,12 +8,14 @@ Feature: Users
     Given Create user by json DataCreateUsers1.json
     When  Send request create users
     Then  Status code should be 201
+    And   Validate json schema "ValidatePostCreateUsers.json"
    #LOGIN ACCOUNT
   @Test
   Scenario: As user i can login with valid email or phone number
     Given Login user by json UserDataLogin3.json
     When  Send request login users
     Then  Status code should be 200
+    And   Validate json schema "ValidatePostLoginUsers.json"
 
 
   @Test
@@ -45,6 +47,7 @@ Feature: Users
     Given Get users with path "usersS"
     When  Send request get user
     Then  Status code should be 404
+    And   Validate json schema "ValidateGetInvalidUsers.json"
 
 #PUT -----------------------------------------------------------------------------------------------------------
   @Test
@@ -53,12 +56,15 @@ Feature: Users
     Given Update data with valid multipart form data; full name "ryan", email "neuty@gmail.com", phone number "085799394557", password "pass12345", ktp "3389785684748889", npwp "3326160801010021", avatar "selfie.jpg"
     When  Send request update data
     Then  Status code should be 200
+    And   Validate json schema "ValidatePutUsers.json"
+
 
 #NEGATIVE TEST CASE
   Scenario: Update user with invalid multipart form data
     Given Update data with valid multipart form data; full name "ryan", email "jahbs@gmail.com", phone number "085788969887", password "ryan123", ktp "3389785684748889", npwp "3326160801010021", avatar "selfie.jpg"
     When Send request update data
     Then Status code should be 400
+    And  Validate json schema "ValidatePutInvalidUsers.json"
 
 #DELETE --------------------------------------------------------------------------------------------------------
   @Test

@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "user": {
+          "type": "object",
+          "properties": {
+            "fullname": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "handphone": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "fullname",
+            "email",
+            "handphone"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "document": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "capital": {
+          "type": "integer"
+        },
+        "share": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "collected": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "updatedAt",
+        "user",
+        "title",
+        "image",
+        "document",
+        "description",
+        "capital",
+        "share",
+        "status",
+        "collected"
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "code",
+    "data",
+    "message"
+  ]
+}

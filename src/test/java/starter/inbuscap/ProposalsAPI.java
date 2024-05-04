@@ -8,7 +8,7 @@ import java.io.File;
 
 public class ProposalsAPI {
     public static String GET_PATH = Constants.BASE_URL + "/{path}";
-    public static String GET_PARAM = Constants.BASE_URL + "myproposals?{param}";
+    public static String GET_PARAM = Constants.BASE_URL + "/myproposals?{param}";
     public static String PROPOSALS_ID = Constants.BASE_URL + "/proposals/{proposals_id}";
     public static String PROPOSALS = Constants.BASE_URL + "/proposals";
     public static String REPORT = Constants.BASE_URL + "/report";
@@ -36,7 +36,7 @@ public class ProposalsAPI {
     @Step("Create proposals by multipart data")
     public void createProposals(File image, String title, String desc, int capital, int share, File proposal){
         SerenityRest.given().log().all()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ3NzA0ODksImlhdCI6MTcxNDc1OTY4OSwiaWQiOiIxMDkiLCJpc19hY3RpdmUiOjAsImlzX2FkbWluIjpmYWxzZX0.L4w1Z-vwZQIppSlW1bcQFQjBcFPMs0NOUHxBQnkSoXs")
                 .contentType("multipart/form-data")
                 .multiPart("file", image)
                 .multiPart("title", title)
@@ -49,7 +49,7 @@ public class ProposalsAPI {
     @Step("Create report by multipart form data")
     public void createReport(int proposal_id, String date, File report, int amount){
         SerenityRest.given().log().all()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ3NzA0ODksImlhdCI6MTcxNDc1OTY4OSwiaWQiOiIxMDkiLCJpc19hY3RpdmUiOjAsImlzX2FkbWluIjpmYWxzZX0.L4w1Z-vwZQIppSlW1bcQFQjBcFPMs0NOUHxBQnkSoXs")
                 .contentType("multipart/form-data")
                 .multiPart("proposal_id", proposal_id)
                 .multiPart("date", date)

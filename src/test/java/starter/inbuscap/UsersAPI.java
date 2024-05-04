@@ -39,7 +39,7 @@ public class UsersAPI {
     @Step("Update Data by multipart form data")
     public void UpdateData(String fullname, String email, String number, String password, String ktp, String npwp, File avatar){
         SerenityRest.given().log().all()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ3Mjg5NDAsImlhdCI6MTcxNDcxODE0MCwiaWQiOiI5NSIsImlzX2FjdGl2ZSI6MCwiaXNfYWRtaW4iOmZhbHNlfQ.gIJcEF5Rgvbpa2Wwan_UDNqaaZd8D3o4u1QEKuReM1A")
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ3NjkyNzgsImlhdCI6MTcxNDc1ODQ3OCwiaWQiOiI5NSIsImlzX2FjdGl2ZSI6MSwiaXNfYWRtaW4iOmZhbHNlfQ.r7zDxXFXIvqEww1-S7Cai_RDZe_uV1BdDx3AD7r91yw")
                 .contentType("multipart/form-data")
                 .multiPart("fullname", fullname)
                 .multiPart("email", email)
