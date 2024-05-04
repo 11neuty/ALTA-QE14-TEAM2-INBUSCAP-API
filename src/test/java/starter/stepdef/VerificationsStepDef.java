@@ -3,7 +3,6 @@ package starter.stepdef;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.zh_cn.假如;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.inbuscap.VerificationsAPI;
@@ -60,4 +59,46 @@ public class VerificationsStepDef {
                 .post(VerificationsAPI.PROPOSALS_ID);
     }
 
+    @Given("Get verification with valid parameter status {int} and page {int}")
+    public void getVerificationWithValidParameterStatusAndPage(int status, int page) {
+        verificationsAPI.getVerificationValid(status,page);
+    }
+
+    @When("Send request get verification by status and page")
+    public void sendRequestGetVerificationByStatusAndPage() {
+        SerenityRest.when()
+                .get(VerificationsAPI.GET_VERIFICATION_USERS);
+    }
+
+    @Given("Get verification with valid parameter status {string} and page {string}")
+    public void getVerificationWithValidParameterStatusAndPage(String status, String page) {
+        verificationsAPI.getVerificationInvalid(status,page);
+    }
+
+    @Given("Get verification proposal with valid proposal id {int}")
+    public void getVerificationWithValidProposalId(int proposal_id) {
+        verificationsAPI.getVerificationValidProposalId(proposal_id);
+    }
+
+    @When("Send request get verification by proposal id")
+    public void sendRequestGetVerificationByProposalId() {
+        SerenityRest.when()
+                .get(VerificationsAPI.GET_VERIFICATION_PROPOSALS);
+    }
+
+
+    @Given("Get verification proposal with invalid proposal id {string}")
+    public void getVerificationProposalWithInvalidProposalId(String proposal_id) {
+        verificationsAPI.getVerificationInvalidProposalId(proposal_id);
+    }
+
+    @Given("Get verification proposal with valid status {int} and page {int}")
+    public void getVerificationProposalWithValidStatusAndPage(int status, int page) {
+        verificationsAPI.getVerificationProposalValid(status, page);
+    }
+
+    @Given("Get verification proposal with invalid status {string} and page {string}")
+    public void getVerificationProposalWithInvalidStatusAndPage(String status, String page) {
+        verificationsAPI.getVerificationProposalInvalid(status, page);
+    }
 }
