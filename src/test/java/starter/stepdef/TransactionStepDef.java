@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.inbuscap.InbuscapResponses;
@@ -19,6 +20,7 @@ public class TransactionStepDef {
     @Steps
     TransactionAPI transactionAPI;
 
+    //Top Up
     @Given("Top Up with valid data {string}")
     public void topUpWithValidData(String jsonData) {
         File jsonFile = new File(Constants.REQ_BODY+"/Transaction/"+jsonData);
@@ -30,19 +32,21 @@ public class TransactionStepDef {
         SerenityRest.when()
                 .post(TransactionAPI.TRANSACTIONS_TOPUP);
     }
-//    @Given("Top Up with valid data {string}")
-//    public void topUpWithValidData(String json) {
-//        File jsonFile = new File(Constants.REQ_BODY+"/Transaction/"+json);
-//        transactionAPI.TopUpWithValidData(jsonFile);
-//    }
-//
-//    @When("Send request Top Up")
-//    public void sendRequestTopUp() {
-//        SerenityRest.when()
-//                .post(TransactionAPI.TRANSACTIONS_TOPUP);
-//    }
 
-    @Given("Top Up with invalid payment type {}")
+    @And("Response body message was {string}")
+    public void responseBodyMessageWas(String message) {
+        SerenityRest.and()
+                .body(InbuscapResponses.MESSAGE,equalTo(message));
+    }
+
+    @And("Validate Top up json schema {string}")
+    public void validateTopUpJsonSchema(String json) {
+        File jsonFile = new File(Constants.JSON_SCHEMA +"Transaction/"+json);
+        SerenityRest.and()
+                .body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
+    }
+
+    @Given("Top Up with invalid payment type {string}")
     public void topUpWithInvalidPaymentTypeJson(String json) {
         File jsonFile = new File(Constants.REQ_BODY+"Transaction/"+json);
         transactionAPI.TopUpWithValidData(jsonFile);
@@ -59,6 +63,8 @@ public class TransactionStepDef {
         File jsonFile = new File(Constants.REQ_BODY+"Transaction/"+json);
         transactionAPI.TopUpWithValidData(jsonFile);
     }
+
+    //Withdraw
     @Given("Withdraw with valid data {string}")
     public void withdrawWithValidData(String json) {
         File jsonFile = new File(Constants.REQ_BODY+"Transaction/"+json);
@@ -69,6 +75,14 @@ public class TransactionStepDef {
     public void sendRequestWithdraw() {
         SerenityRest.when()
                 .post(TransactionAPI.TRANSACTIONS_WITHDRAW);
+    }
+
+    @And("Validate withdraw json schema {string}")
+    public void validateWithdrawJsonSchema(String json) {
+        File jsonFile = new File(Constants.JSON_SCHEMA +"Transaction/"+json);
+        SerenityRest.and()
+                .body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
+
     }
 
     @Given("Withdraw with invalid bank {string}")
@@ -95,13 +109,7 @@ public class TransactionStepDef {
         transactionAPI.WithdrawWithValidData(jsonFile);
     }
 
-    @Then("Status code should be {int}")
-    public void statusCodeShouldBe(int statusCode) {
-        SerenityRest.and()
-                .statusCode(statusCode);
-    }
-
-
+    //Get Transaction Returns
     @Given("Get available returns from investment with valid path {string}")
     public void getAvailableReturnsFromInvestmentWithValidPath(String returns) {
         transactionAPI.GetTransaction(returns);
@@ -118,12 +126,9 @@ public class TransactionStepDef {
         transactionAPI.GetTransaction(returns);
     }
 
-    @And("Response body message was {string}")
-    public void responseBodyMessageWas(String message) {
+    @Then("Status code should be {int}")
+    public void statusCodeShouldBe(int statusCode) {
         SerenityRest.and()
-                .body(InbuscapResponses.MESSAGE,equalTo(message));
+                .statusCode(statusCode);
     }
-
-
-
 }

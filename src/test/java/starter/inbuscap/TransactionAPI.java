@@ -12,18 +12,10 @@ public class TransactionAPI {
     public static String TRANSACTIONS_TOPUP = Constants.BASE_URL+"transactions/topup";
     public static String TRANSACTIONS_WITHDRAW = Constants.BASE_URL+"transactions/withdraw";
 
-
-    @Step("Get transaction")
-    public void GetTransaction(String returns){
-        SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ3NjU5OTAsImlhdCI6MTcxNDc1NTE5MCwiaWQiOiI5NSIsImlzX2FjdGl2ZSI6MSwiaXNfYWRtaW4iOmZhbHNlfQ.nYoQdXBErS6_-gQwGCG498yaNG8AHK90MzWAvFMmzyA")
-                .pathParam("returns", returns);
-    }
-
     @Step("Top Up with valid data")
     public void TopUpWithValidData(File json){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ3Njc0NDksImlhdCI6MTcxNDc1NjY0OSwiaWQiOiI5NSIsImlzX2FjdGl2ZSI6MSwiaXNfYWRtaW4iOmZhbHNlfQ.IZWQcoKZ7lUtaQcUnmxWQvQLwEGJogg-0Xrq5ZC_n3A")
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ4MDU0NzQsImlhdCI6MTcxNDc5NDY3NCwiaWQiOiIxIiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6ZmFsc2V9.tkyUPTh5_oBZMxVB1bLoZz1KTBxYOzU61DfiNBQup7k")
                 .contentType(ContentType.JSON)
                 .body(json);
     }
@@ -31,8 +23,15 @@ public class TransactionAPI {
     @Step("Withdraw with valid data")
     public void WithdrawWithValidData(File json){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ3NjU5OTAsImlhdCI6MTcxNDc1NTE5MCwiaWQiOiI5NSIsImlzX2FjdGl2ZSI6MSwiaXNfYWRtaW4iOmZhbHNlfQ.nYoQdXBErS6_-gQwGCG498yaNG8AHK90MzWAvFMmzyA")
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ4MDU0NzQsImlhdCI6MTcxNDc5NDY3NCwiaWQiOiIxIiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6ZmFsc2V9.tkyUPTh5_oBZMxVB1bLoZz1KTBxYOzU61DfiNBQup7k")
                 .contentType(ContentType.JSON)
                 .body(json);
+    }
+
+    @Step("Get transaction")
+    public void GetTransaction(String returns){
+        SerenityRest.given()
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ4MDU0NzQsImlhdCI6MTcxNDc5NDY3NCwiaWQiOiIxIiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6ZmFsc2V9.tkyUPTh5_oBZMxVB1bLoZz1KTBxYOzU61DfiNBQup7k")
+                .pathParam("returns", returns);
     }
 }
