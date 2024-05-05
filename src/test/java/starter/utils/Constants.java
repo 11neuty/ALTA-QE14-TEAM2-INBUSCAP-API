@@ -1,7 +1,5 @@
 package starter.utils;
 
-import java.security.PublicKey;
-
 public class Constants {
         public static String DIR = System.getProperty("user.dir");
         public static String BASE_URL = "https://inbuscap-server.my.id/";
