@@ -18,3 +18,4 @@ buildNumber.properties
 .DS_Store
 src/.DS_Store
 src/test/resources/JSON/Reqbody/.DS_Store
+**/.DS_Store
