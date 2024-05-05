@@ -1,6 +1,7 @@
 Feature: Investment
 
   #POST +
+  @Inbuscap
   Scenario: Add new investment with valid data json
     Given Add new investment with valid data json "AddValidInvestment.json"
     When Send request add new investment
@@ -9,6 +10,7 @@ Feature: Investment
     And Validate json schema "SendCapitalJsonSchema.json"
 
   #POST -
+  @Inbuscap
   Scenario Outline: Add new investment with invalid proposal id
     Given Add new investment with invalid proposal id "<json>"
     When Send request add new investment
@@ -20,6 +22,7 @@ Feature: Investment
       |AddInvalid2.json|
       |AddInvalid3.json|
 
+  @Inbuscap
   Scenario Outline: Add new investment with invalid amount
     Given Add new investment with invalid amount "<json>"
     When Send request add new investment
@@ -30,6 +33,7 @@ Feature: Investment
       |AddInvalid4.json|
       |AddInvalid5.json|
 
+  @Inbuscap
   Scenario Outline: Add new investment with invalid proposal id and amount
     Given Add new investment with invalid proposal id and amount "<json>"
     When Send request add new investment
@@ -41,6 +45,7 @@ Feature: Investment
       |AddInvalid7.json|
 
     #GET ALL +
+  @Inbuscap
   Scenario: Get all investment proposal with valid parameter page
     Given Get all investment proposal with valid parameter page 1
     When Send get investment
@@ -50,6 +55,7 @@ Feature: Investment
 
 
  #GET ALL -
+  @Inbuscap
   Scenario: Get all investment proposal with invalid parameter page
     Given Get all investment proposal with invalid parameter page "s@tu"
     When Send get investment
@@ -58,6 +64,7 @@ Feature: Investment
 
 
   #GET DETAIL +
+  @Inbuscap
   Scenario: Get detail invested proposal with valid proposal id
     Given Get detail invested proposal with valid proposal id 41
     When Send get detail invested proposal
@@ -67,6 +74,7 @@ Feature: Investment
 
 
   #GET DETAIL -
+  @Inbuscap
   Scenario: Get detail invested proposal with invalid proposal id
     Given Get detail invested proposal with invalid proposal id "empat puluh satu"
     When Send get detail invested proposal
@@ -75,12 +83,14 @@ Feature: Investment
 
 
  #DELETE +
+  @Inbuscap
   Scenario: Delete data investment with valid proposal id
     Given Delete data investment with valid proposal id 40
     When Send delete investment
     Then Status code should be 200
 
   #DELETE -
+  @Inbuscap
   Scenario: Delete data investment with invalid proposal id
     Given Delete data investment with invalid proposal id "s@tu"
     When Send delete investment
