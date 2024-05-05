@@ -1,5 +1,6 @@
 package starter.utils;
 
+
 public class Constants {
         public static String DIR = System.getProperty("user.dir");
         public static String BASE_URL = "https://inbuscap-server.my.id/";
@@ -13,7 +14,6 @@ public class Constants {
         public static String IMAGE = FORM + "/IMAGE/";
         public static String PROPOSAL = FORM + "/PROPOSAL/";
         public static String REPORT = FORM + "/REPORT/";
-
         public static String TOKEN = "";
         public static String TOKEN_USER = "Bearer " + TOKEN;
 }
