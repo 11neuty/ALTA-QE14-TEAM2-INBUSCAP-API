@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "capital": {
+          "type": "integer"
+        },
+        "share": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "proposal": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "owner",
+        "description",
+        "capital",
+        "share",
+        "status",
+        "proposal"
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "code",
+    "data",
+    "message"
+  ]
+}
