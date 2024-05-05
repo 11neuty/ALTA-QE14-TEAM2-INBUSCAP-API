@@ -15,15 +15,7 @@ public class TransactionAPI {
     @Step("Top Up with valid data")
     public void TopUpWithValidData(File json){
         SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
-                .contentType(ContentType.JSON)
-                .body(json);
-    }
-
-    @Step("Withdraw with valid data")
-    public void WithdrawWithValidData(File json){
-        SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "bearer ")
                 .contentType(ContentType.JSON)
                 .body(json);
     }
@@ -34,4 +26,14 @@ public class TransactionAPI {
                 .header("Authorization", Constants.TOKEN_USER)
                 .pathParam("returns", returns);
     }
+
+    @Step("Withdraw with valid data")
+    public void WithdrawWithValidData(File json){
+        SerenityRest.given()
+                .header("Authorization", Constants.TOKEN_USER)
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+
+
 }
