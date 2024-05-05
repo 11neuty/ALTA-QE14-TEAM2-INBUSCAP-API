@@ -1,0 +1,432 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "proposal": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "owner",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "proposal"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "proposal": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "owner",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "proposal"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "proposal": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "owner",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "proposal"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "proposal": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "owner",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "proposal"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "proposal": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "owner",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "proposal"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "proposal": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "owner",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "proposal"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "proposal": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "owner",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "proposal"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "proposal": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "owner",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "proposal"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "proposal": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "owner",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "proposal"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "proposal": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "owner",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "proposal"
+          ]
+        }
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "pagination": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer"
+        },
+        "page_size": {
+          "type": "integer"
+        },
+        "total_pages": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "page",
+        "page_size",
+        "total_pages"
+      ]
+    }
+  },
+  "required": [
+    "code",
+    "data",
+    "message",
+    "pagination"
+  ]
+}
