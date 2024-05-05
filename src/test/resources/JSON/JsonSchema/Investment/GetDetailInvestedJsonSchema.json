@@ -1,0 +1,137 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "amount",
+            "status"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "amount",
+            "status"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "amount",
+            "status"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "amount",
+            "status"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "amount",
+            "status"
+          ]
+        }
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "code",
+    "data",
+    "message"
+  ]
+}
