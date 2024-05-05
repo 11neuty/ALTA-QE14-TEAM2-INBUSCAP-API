@@ -60,14 +60,14 @@ public class VerificationsAPI {
     public void getVerificationValidProposalId(int proposal_id){
         SerenityRest.given()
                 .header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4MTUsImlhdCI6MTcxNDkwOTAxNSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.kUClF0nNMyOHBXYHV8cZ9tv0hXr9KiEsOu3y6rpPg2M")
-                .pathParam("proposal_id", proposal_id);
+                .pathParam("proposals_id", proposal_id);
     }
 
     @Step("Get verification with invalid proposal id")
     public void getVerificationInvalidProposalId(String proposal_id){
         SerenityRest.given()
                 .header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4MTUsImlhdCI6MTcxNDkwOTAxNSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.kUClF0nNMyOHBXYHV8cZ9tv0hXr9KiEsOu3y6rpPg2M")
-                .pathParam("proposal_id", proposal_id);
+                .pathParam("proposals_id", proposal_id);
     }
 
     @Step("Get verification proposal with valid parameter status and page")
