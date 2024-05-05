@@ -13,7 +13,13 @@ public class InvestmentAPI {
     public static String ADD_INVESTMENT = Constants.BASE_URL+"investments";
     public static String DELETE_INVESTMENT = Constants.BASE_URL+"investments?proposal_id={proposal_id}";
 
-
+    @Step("Add new investment")
+    public void AddInvestment (File json){
+        SerenityRest.given()
+                .header("Authorization", Constants.TOKEN_USER)
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
 
     @Step("Get all investment proposal with valid parameter page")
     public void getAllInvestmentProposalWithValidParameterPage(int page){
@@ -22,7 +28,7 @@ public class InvestmentAPI {
                 .pathParam("page", page);
     }
 
-    @Step("Get all investment proposal with valid parameter page")
+    @Step("Get all investment proposal with invalid parameter page")
     public void getAllInvestmentProposalWithInvalidParameterPage(String page){
         SerenityRest.given()
                 .header("Authorization", Constants.TOKEN_USER)
@@ -43,20 +49,13 @@ public class InvestmentAPI {
                 .pathParam("proposal_id", proposal_id);
     }
 
-    @Step("Add new investment")
-    public void AddInvestment (File json){
-        SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
-                .contentType(ContentType.JSON)
-                .body(json);
-    }
-
     @Step("Delete investment with valid proposal id")
     public void deleteInvestmentWithValidProposalId(int proposal_id){
         SerenityRest.given()
                 .header("Authorization", Constants.TOKEN_USER)
                 .pathParam("proposal_id", proposal_id);
     }
+
     @Step("Delete investment with invalid proposal id")
     public void deleteInvestmentWithInvalidProposalId(String proposal_id){
         SerenityRest.given()

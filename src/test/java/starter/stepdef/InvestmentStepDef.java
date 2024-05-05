@@ -62,15 +62,14 @@ public class InvestmentStepDef {
     }
 
 
-    @Given("Get all investment proposal with invalid parameter page {}")
-    public void getAllInvestmentProposalWithInvalidParameterPagePage(String page) {
-        investmentsAPI.getAllInvestmentProposalWithInvalidParameterPage(page);
+    @Given("Get all investment proposal with invalid parameter page {string}")
+    public void getAllInvestmentProposalWithInvalidParameterPage(String page) {
+        investmentAPI.getAllInvestmentProposalWithInvalidParameterPage(page);
     }
-
 
     @Given("Get detail invested proposal with valid proposal id {int}")
     public void getDetailInvestedProposalWithValidProposalId(int proposal_id) {
-        investmentsAPI.getDetailInvestedProposalWithValidProposalId(proposal_id);
+        investmentAPI.getDetailInvestedProposalWithValidProposalId(proposal_id);
     }
 
     @When("Send get detail invested proposal")
@@ -79,8 +78,8 @@ public class InvestmentStepDef {
                 .get(InvestmentAPI.DETAIL_INVESTED);
     }
 
-    @Given("Get detail invested proposal with invalid proposal id {}")
-    public void getDetailInvestedProposalWithInvalidProposalIdProposal_id(String proposal_id) {
+    @Given("Get detail invested proposal with invalid proposal id {string}")
+    public void getDetailInvestedProposalWithInvalidProposalId(String proposal_id) {
         investmentAPI.getDetailInvestedProposalWithInvalidProposalId(proposal_id);
     }
 
@@ -113,9 +112,12 @@ public class InvestmentStepDef {
 
     @And("Validate json schema {string}")
     public void validateJsonSchema(String json) {
-        File jsonFile = new File(Constants.JSON_SCHEMA+"/Investment" + json);
+        File jsonFile = new File(Constants.JSON_SCHEMA+"/Investment/" + json);
         SerenityRest.and()
                 .body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
 
     }
+
+
+
 }

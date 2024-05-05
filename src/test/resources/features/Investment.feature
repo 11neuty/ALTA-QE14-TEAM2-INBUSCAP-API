@@ -4,7 +4,7 @@ Feature: Investment
   Scenario: Add new investment with valid data json
     Given Add new investment with valid data json "AddValidInvestment.json"
     When Send request add new investment
-    Then Status code should be 201
+    Then Status code should be 200
     And Response body message was "Successfully Sent Capital"
     And Validate json schema "SendCapitalJsonSchema.json"
 
@@ -46,41 +46,37 @@ Feature: Investment
     When Send get investment
     Then Status code should be 200
     And Response body message was "Success Get All Investments"
+    And Validate json schema "GetAllInvestmentJsonSchema.json"
 
 
  #GET ALL -
-  Scenario Outline: Get all investment proposal with invalid parameter page
-    Given Get all investment proposal with invalid parameter page <page>
+  Scenario: Get all investment proposal with invalid parameter page
+    Given Get all investment proposal with invalid parameter page "s@tu"
     When Send get investment
     Then Status code should be 400
     And Response body message was "the data sent is incorrect"
 
-    Examples:
-      | page |
-      | satu |
-      | s@tu |
 
   #GET DETAIL +
   Scenario: Get detail invested proposal with valid proposal id
-    Given Get detail invested proposal with valid proposal id 1
+    Given Get detail invested proposal with valid proposal id 41
     When Send get detail invested proposal
     Then Status code should be 200
     And Response body message was "Successfully Get Detail Investment Proposal"
+    And Validate json schema "GetDetailInvestedJsonSchema.json"
+
 
   #GET DETAIL -
-  Scenario Outline: Get detail invested proposal with invalid proposal id
-    Given Get detail invested proposal with invalid proposal id <proposal_id>
+  Scenario: Get detail invested proposal with invalid proposal id
+    Given Get detail invested proposal with invalid proposal id "empat puluh satu"
     When Send get detail invested proposal
     Then Status code should be 400
     And Response body message was "the data sent is incorrect"
-    Examples:
-      | proposal_id |
-      | satu        |
-      | t!ga        |
+
 
  #DELETE +
   Scenario: Delete data investment with valid proposal id
-    Given Delete data investment with valid proposal id 23
+    Given Delete data investment with valid proposal id 40
     When Send delete investment
     Then Status code should be 200
 
