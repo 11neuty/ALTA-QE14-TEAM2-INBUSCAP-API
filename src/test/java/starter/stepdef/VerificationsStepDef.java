@@ -1,14 +1,19 @@
 package starter.stepdef;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
+import starter.inbuscap.InbuscapResponses;
 import starter.inbuscap.VerificationsAPI;
 import starter.utils.Constants;
 
 import java.io.File;
+
+import static org.hamcrest.Matchers.equalTo;
 
 public class VerificationsStepDef {
     @Steps
@@ -83,7 +88,7 @@ public class VerificationsStepDef {
     @When("Send request get verification by proposal id")
     public void sendRequestGetVerificationByProposalId() {
         SerenityRest.when()
-                .get(VerificationsAPI.GET_VERIFICATION_PROPOSALS);
+                .get(VerificationsAPI.PROPOSALS_ID);
     }
 
 
@@ -100,5 +105,24 @@ public class VerificationsStepDef {
     @Given("Get verification proposal with invalid status {string} and page {string}")
     public void getVerificationProposalWithInvalidStatusAndPage(String status, String page) {
         verificationsAPI.getVerificationProposalInvalid(status, page);
+    }
+
+    @And("Response body message was {string}")
+    public void responseBodyMessageWas(String message) {
+        SerenityRest.and()
+                .body(InbuscapResponses.MESSAGE,equalTo(message));
+    }
+
+    @And("Validate Top up json schema {string}")
+    public void validateTopUpJsonSchema(String json) {
+        File jsonFile = new File(Constants.JSON_SCHEMA +"Verification/"+json);
+        SerenityRest.and()
+                .body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
+    }
+
+    @When("Send request get verification proposal by status and page")
+    public void sendRequestGetVerificationProposalByStatusAndPage() {
+        SerenityRest.when()
+                .get(VerificationsAPI.GET_VERIFICATION_PROPOSALS);
     }
 }

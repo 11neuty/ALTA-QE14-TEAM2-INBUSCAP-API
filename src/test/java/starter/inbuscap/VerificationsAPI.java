@@ -8,11 +8,11 @@ import starter.utils.Constants;
 import java.io.File;
 
 public class VerificationsAPI {
-    public static String USERS = Constants.BASE_URL + "/verifications/users";
-    public static String USERS_ID = Constants.BASE_URL + "/verifications/users/{users_id}";
+    public static String USERS = Constants.BASE_URL + "verifications/users";
+    public static String USERS_ID = Constants.BASE_URL + "verifications/users/{users_id}";
     public static String PROPOSALS_ID = Constants.BASE_URL + "verifications/proposals/{proposals_id}";
     public static String GET_VERIFICATION_USERS = Constants.BASE_URL + "verifications/users?status={status}&page={page}";
-    public static String GET_VERIFICATION_PROPOSALS = Constants.BASE_URL + "verifications/proposal?status={status}&page={page}";
+    public static String GET_VERIFICATION_PROPOSALS = Constants.BASE_URL + "verifications/proposals?status={status}&page={page}";
 
 
     @Step("Verifications users by valid multipart data form")
@@ -43,7 +43,7 @@ public class VerificationsAPI {
     @Step("Get verification with valid parameter status and page")
     public void getVerificationValid(int status, int page){
         SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4MTUsImlhdCI6MTcxNDkwOTAxNSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.kUClF0nNMyOHBXYHV8cZ9tv0hXr9KiEsOu3y6rpPg2M")
                 .pathParam("status", status)
                 .pathParam("page", page);
     }
@@ -51,7 +51,7 @@ public class VerificationsAPI {
     @Step("Get verification with invalid parameter status and page")
     public void getVerificationInvalid(String status, String page){
         SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4MTUsImlhdCI6MTcxNDkwOTAxNSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.kUClF0nNMyOHBXYHV8cZ9tv0hXr9KiEsOu3y6rpPg2M")
                 .pathParam("status", status)
                 .pathParam("page", page);
     }
@@ -59,21 +59,21 @@ public class VerificationsAPI {
     @Step("Get verification with valid proposal id")
     public void getVerificationValidProposalId(int proposal_id){
         SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
-                .pathParam("status", proposal_id);
+                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4MTUsImlhdCI6MTcxNDkwOTAxNSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.kUClF0nNMyOHBXYHV8cZ9tv0hXr9KiEsOu3y6rpPg2M")
+                .pathParam("proposal_id", proposal_id);
     }
 
     @Step("Get verification with invalid proposal id")
     public void getVerificationInvalidProposalId(String proposal_id){
         SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
-                .pathParam("status", proposal_id);
+                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4MTUsImlhdCI6MTcxNDkwOTAxNSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.kUClF0nNMyOHBXYHV8cZ9tv0hXr9KiEsOu3y6rpPg2M")
+                .pathParam("proposal_id", proposal_id);
     }
 
     @Step("Get verification proposal with valid parameter status and page")
     public void getVerificationProposalValid(int status, int page){
         SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4MTUsImlhdCI6MTcxNDkwOTAxNSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.kUClF0nNMyOHBXYHV8cZ9tv0hXr9KiEsOu3y6rpPg2M")
                 .pathParam("status", status)
                 .pathParam("page", page);
 
@@ -82,7 +82,7 @@ public class VerificationsAPI {
     @Step("Get verification proposal with invalid parameter status and page")
     public void getVerificationProposalInvalid(String status, String page){
         SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4MTUsImlhdCI6MTcxNDkwOTAxNSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.kUClF0nNMyOHBXYHV8cZ9tv0hXr9KiEsOu3y6rpPg2M")
                 .pathParam("status", status)
                 .pathParam("page", page);
     }
