@@ -49,8 +49,8 @@ public class UsersStepDef {
                 .post(UsersAPI.LOGIN_USERS);
         JsonPath jsonpath = response.jsonPath();
         String token = jsonpath.get("data.token");
-        System.out.println(token);
         Constants.TOKEN = token;
+        System.out.println(token);
 
     }
     //GET
@@ -64,12 +64,6 @@ public class UsersStepDef {
                 .get(UsersAPI.GET_PATH);
     }
 
-    @And("Response body name should be {string} and email should be {string}")
-    public void responseBodyNameShouldBeAndEmailShouldBe(String name, String email) {
-        SerenityRest.and()
-                .body(InbuscapResponses.NAME, equalTo(name))
-                .body(  InbuscapResponses.EMAIL, equalTo(email));
-    }
 
     @And("Validate json schema {string}")
     public void validateJsonSchema(String json) {
@@ -110,6 +104,9 @@ public class UsersStepDef {
         SerenityRest.then()
                 .statusCode(statusCode);
     }
-
-
+    @And("Response body message should be {string}")
+    public void responseBodyMessageShouldBe(String msg) {
+        SerenityRest.and()
+                .body(InbuscapResponses.MESSAGE, equalTo(msg));
+    }
 }

@@ -13,12 +13,17 @@ public class UsersAPI {
     public static String LOGIN_USERS = Constants.BASE_URL + "/login";
 
 
-
+    @Step("Login user by json")
+    public void
+    loginUsers(File json){
+        SerenityRest.given()
+                .contentType(ContentType.JSON).body(json);
+    }
 
     @Step("Get users with valid page")
     public void getUsersWithValidPage(String path){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ3MzA2NDgsImlhdCI6MTcxNDcxOTg0OCwiaWQiOiI5NSIsImlzX2FjdGl2ZSI6MCwiaXNfYWRtaW4iOmZhbHNlfQ.51SPjEBvqeJ5g_O6ZBUYqGMTxkrlvrgouU7kdVKMxu0")
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4NjAsImlhdCI6MTcxNDkwOTA2MCwiaWQiOiIxMTMiLCJpc19hY3RpdmUiOjEsImlzX2FkbWluIjpmYWxzZX0.Vsf4bA0bkOJj9Vsu7iSC6rcC7a6uD0D-85zJV_9BF7M")
                 .pathParam("path", path);
 
 
@@ -28,18 +33,12 @@ public class UsersAPI {
         SerenityRest.given()
                 .contentType(ContentType.JSON).body(json);
     }
-    @Step("Login user by json")
-    public void
-    loginUsers(File json){
-        SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
-                .contentType(ContentType.JSON).body(json);
-    }
+
 
     @Step("Update Data by multipart form data")
     public void UpdateData(String fullname, String email, String number, String password, String ktp, String npwp, File avatar){
         SerenityRest.given().log().all()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ3NjkyNzgsImlhdCI6MTcxNDc1ODQ3OCwiaWQiOiI5NSIsImlzX2FjdGl2ZSI6MSwiaXNfYWRtaW4iOmZhbHNlfQ.r7zDxXFXIvqEww1-S7Cai_RDZe_uV1BdDx3AD7r91yw")
+                .header("Authorization", Constants.TOKEN_USER)
                 .contentType("multipart/form-data")
                 .multiPart("fullname", fullname)
                 .multiPart("email", email)
