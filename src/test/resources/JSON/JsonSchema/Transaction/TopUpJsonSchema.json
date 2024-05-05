@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "order_id": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "string"
+        },
+        "va_numbers": {
+          "type": "object",
+          "properties": {
+            "bank": {
+              "type": "string"
+            },
+            "va_number": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "bank",
+            "va_number"
+          ]
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "expiry_time": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "order_id",
+        "amount",
+        "status",
+        "va_numbers",
+        "created_at",
+        "expiry_time"
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "code",
+    "data",
+    "message"
+  ]
+}
