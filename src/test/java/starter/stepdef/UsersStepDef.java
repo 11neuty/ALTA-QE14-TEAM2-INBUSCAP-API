@@ -36,9 +36,9 @@ public class UsersStepDef {
 
 
 
-    @Given("Login user by json {}")
+    @Given("Login user by json {string}")
     public void loginUserByJsonLoginDataJson(String json) {
-        File jsonFile = new File(Constants.REQ_BODY +"Users/" + json);
+        File jsonFile = new File(Constants.REQ_BODY + "Users/" + json);
         usersAPI.loginUsers(jsonFile);
 
     }

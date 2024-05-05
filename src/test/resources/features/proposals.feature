@@ -6,7 +6,7 @@ Feature: PROPOSALS
   #POSITIVE TEST CASE
   @Test
   Scenario: Create new proposals with valid multipart data form
-    Given   Create proposals by multipart data form image "cupangImage.jpg", title "Ikan Lele Oji", description "Jualan ikan hebat", capital 100000000, share 10, proposal "CupangProposal.pdf"
+    Given   Create proposals by multipart data form image "cupangImage.jpg", title "Jualan lisa", description "ikan hebat", capital 100000000, share 10, proposal "CupangProposal.pdf"
     When    Send request create proposal
     Then    Status code should be 200
     And     Response body message should be "success create post"
@@ -83,10 +83,10 @@ Feature: PROPOSALS
   #POSITIVE TEST CASE
 
   Scenario: Edit proposal by valid proposal id and valid multipart data form
-    Given Edit proposal by proposal id 1 and multipart form data image "cupangImage.jpg", title "title", description "desc", capital 100, proposal "cupangProposal.pdf"
+    Given Edit proposal by proposal id 41 and multipart form data image "cupangImage.jpg", title "Jualan oji", description "desc", capital 100, proposal "cupangProposal.pdf"
     When  Send request edit proposal
-    Then  Status code should be 201
-    And   Response body message should be "Successfully Edit Proposal"
+    Then  Status code should be 200
+    And   Response body message should be "success update post"
     And   Validate json schema proposals "ValidatePutProposalsById.json"
 
     #NEGATIVE TEST CASE

@@ -88,7 +88,7 @@ public class ProposalsStepDef {
     @When("Send request edit proposal")
     public void sendRequestEditProposal() {
         SerenityRest.when()
-                .post(ProposalsAPI.PROPOSALS_ID);
+                .put(ProposalsAPI.PROPOSALS_ID);
     }
 
     // DELETE PROPOSALS

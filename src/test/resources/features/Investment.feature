@@ -7,7 +7,7 @@ Feature: Investment
     When Send request add new investment
     Then Status code should be 200
     And Response body message was "Successfully Sent Capital"
-    And Validate json schema "SendCapitalJsonSchema.json"
+    And Validate json schema investment "SendCapitalJsonSchema.json"
 
   #POST -
   @Inbuscap
@@ -51,7 +51,7 @@ Feature: Investment
     When Send get investment
     Then Status code should be 200
     And Response body message was "Success Get All Investments"
-    And Validate json schema "GetAllInvestmentJsonSchema.json"
+    And Validate json schema investment "GetAllInvestmentJsonSchema.json"
 
 
  #GET ALL -
@@ -70,7 +70,7 @@ Feature: Investment
     When Send get detail invested proposal
     Then Status code should be 200
     And Response body message was "Successfully Get Detail Investment Proposal"
-    And Validate json schema "GetDetailInvestedJsonSchema.json"
+    And Validate json schema investment "GetDetailInvestedJsonSchema.json"
 
 
   #GET DETAIL -

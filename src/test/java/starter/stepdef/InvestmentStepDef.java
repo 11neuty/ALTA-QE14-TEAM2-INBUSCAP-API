@@ -98,11 +98,11 @@ public class InvestmentStepDef {
     public void deleteDataInvestmentWithInvalidProposalId(String proposal_id) {
         investmentAPI.deleteInvestmentWithInvalidProposalId(proposal_id);
     }
-    @Then("Status code should be {int}")
-    public void statusCodeShouldBe(int statusCode) {
-        SerenityRest.and()
-                .statusCode(statusCode);
-    }
+//    @Then("Status code should be {int}")
+//    public void statusCodeShouldBe(int statusCode) {
+//        SerenityRest.and()
+//                .statusCode(statusCode);
+//    }
 
     @And("Response body message was {string}")
     public void responseBodyMessageWas(String message) {
@@ -110,7 +110,7 @@ public class InvestmentStepDef {
                 .body(InbuscapResponses.MESSAGE,equalTo(message));
     }
 
-    @And("Validate json schema {string}")
+    @And("Validate json schema investment {string}")
     public void validateJsonSchema(String json) {
         File jsonFile = new File(Constants.JSON_SCHEMA+"/Investment/" + json);
         SerenityRest.and()

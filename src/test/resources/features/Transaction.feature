@@ -7,7 +7,7 @@ Feature: Transaction
     When Send request Top Up
     Then Status code should be 201
     And Response body message was "transaction is created"
-    And Validate Top up json schema "TopUpJsonSchema.json"
+    And Validate Top up json schema transaction "TopUpJsonSchema.json"
 
 
   #TOP UP (-)

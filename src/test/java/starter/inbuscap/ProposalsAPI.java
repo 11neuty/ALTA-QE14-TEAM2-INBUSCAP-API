@@ -7,11 +7,11 @@ import starter.utils.Constants;
 import java.io.File;
 
 public class ProposalsAPI {
-    public static String GET_PROPOSALS_PARAM = Constants.BASE_URL + "/proposals?page={param}";
-    public static String GET_PARAM = Constants.BASE_URL + "/myproposals?page={param}";
-    public static String PROPOSALS_ID = Constants.BASE_URL + "/proposals/{proposals_id}";
-    public static String PROPOSALS = Constants.BASE_URL + "/proposals";
-    public static String REPORT = Constants.BASE_URL + "/report";
+    public static String GET_PROPOSALS_PARAM = Constants.BASE_URL + "proposals?page={param}";
+    public static String GET_PARAM = Constants.BASE_URL + "myproposals?page={param}";
+    public static String PROPOSALS_ID = Constants.BASE_URL + "proposals/{proposals_id}";
+    public static String PROPOSALS = Constants.BASE_URL + "proposals";
+    public static String REPORT = Constants.BASE_URL + "report";
     @Step("Get proposals by path and parameter")
     public void getProposalsByPathAndParam(int page){
         SerenityRest.given()
@@ -23,7 +23,7 @@ public class ProposalsAPI {
     @Step("Get my proposals by param")
     public void getProposalsByParam(int param){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MjAxNDcsImlhdCI6MTcxNDkwOTM0NywiaWQiOiIxMTMiLCJpc19hY3RpdmUiOjEsImlzX2FkbWluIjpmYWxzZX0.LFDSs6T0e69rI2_6k8ViJuKgyavoXV9GqXaHXvv4p_s")
+                .header("Authorization", Constants.TOKEN_USER)
                 .pathParam("param", param);
     }
 
@@ -37,7 +37,7 @@ public class ProposalsAPI {
     @Step("Create proposals by multipart data")
     public void createProposals(File image, String title, String desc, int capital, int share, File proposal){
         SerenityRest.given().log().all()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MjI2NDYsImlhdCI6MTcxNDkxMTg0NiwiaWQiOiIxMTMiLCJpc19hY3RpdmUiOjEsImlzX2FkbWluIjpmYWxzZX0.x6oZjRgXXZ3zQxmC-QyfURBrYvyvDmLAyMeOvArY7y4")
+                .header("Authorization", Constants.TOKEN_USER)
                 .contentType("multipart/form-data")
                 .multiPart("image", image)
                 .multiPart("title", title)
@@ -66,10 +66,9 @@ public class ProposalsAPI {
                 .contentType("multipart/form-data")
                 .multiPart("image", image)
                 .multiPart("title", title)
-                .multiPart("descripption", desc)
+                .multiPart("description", desc)
                 .multiPart("capital", capital)
-                .multiPart("proposal", proposal)
-                .post(ProposalsAPI.PROPOSALS_ID);
+                .multiPart("proposal", proposal);
 
     }
     @Step("Delete proposals by proposal id")

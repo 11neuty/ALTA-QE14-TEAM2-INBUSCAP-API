@@ -33,13 +33,13 @@ public class TransactionStepDef {
                 .post(TransactionAPI.TRANSACTIONS_TOPUP);
     }
 
-    @And("Response body message was {string}")
-    public void responseBodyMessageWas(String message) {
-        SerenityRest.and()
-                .body(InbuscapResponses.MESSAGE,equalTo(message));
-    }
+//    @And("Response body message was {string}")
+//    public void responseBodyMessageWas(String message) {
+//        SerenityRest.and()
+//                .body(InbuscapResponses.MESSAGE,equalTo(message));
+//    }
 
-    @And("Validate Top up json schema {string}")
+    @And("Validate Top up json schema transaction {string}")
     public void validateTopUpJsonSchema(String json) {
         File jsonFile = new File(Constants.JSON_SCHEMA +"Transaction/"+json);
         SerenityRest.and()
@@ -126,9 +126,9 @@ public class TransactionStepDef {
         transactionAPI.GetTransaction(returns);
     }
 
-    @Then("Status code should be {int}")
-    public void statusCodeShouldBe(int statusCode) {
-        SerenityRest.and()
-                .statusCode(statusCode);
-    }
+//    @Then("Status code should be {int}")
+//    public void statusCodeShouldBe(int statusCode) {
+//        SerenityRest.and()
+//                .statusCode(statusCode);
+//    }
 }

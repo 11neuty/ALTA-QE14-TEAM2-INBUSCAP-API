@@ -8,9 +8,9 @@ import starter.utils.Constants;
 import java.io.File;
 
 public class UsersAPI {
-    public static String GET_PATH = Constants.BASE_URL + "/{path}";
-    public static String CREATE_USERS = Constants.BASE_URL + "/users";
-    public static String LOGIN_USERS = Constants.BASE_URL + "/login";
+    public static String GET_PATH = Constants.BASE_URL + "{path}";
+    public static String CREATE_USERS = Constants.BASE_URL + "users";
+    public static String LOGIN_USERS = Constants.BASE_URL + "login";
 
 
     @Step("Login user by json")
@@ -23,7 +23,7 @@ public class UsersAPI {
     @Step("Get users with valid page")
     public void getUsersWithValidPage(String path){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4NjAsImlhdCI6MTcxNDkwOTA2MCwiaWQiOiIxMTMiLCJpc19hY3RpdmUiOjEsImlzX2FkbWluIjpmYWxzZX0.Vsf4bA0bkOJj9Vsu7iSC6rcC7a6uD0D-85zJV_9BF7M")
+                .header("Authorization", Constants.TOKEN_USER)
                 .pathParam("path", path);
 
 

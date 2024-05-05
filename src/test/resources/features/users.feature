@@ -14,7 +14,7 @@ Feature: Users
    #LOGIN ACCOUNT
   @Test
   Scenario: As user i can login with valid email or phone number
-    Given Login user by json UserDataLoginRecipient.json
+    Given Login user by json "UserDataLoginRecipient.json"
     When  Send request login users
     Then  Status code should be 200
     And   Response body message should be "Login Successfully"
@@ -30,7 +30,7 @@ Feature: Users
 
   @Test
   Scenario: As user i cant login by invalid json
-    Given  Login user by json UserBadDataLogin1.json
+    Given  Login user by json "UserBadDataLogin1.json"
     When   Send request login users
     Then   Status code should be 404
 

@@ -33,11 +33,11 @@ public class VerificationsStepDef {
                 .put(VerificationsAPI.USERS);
     }
 
-    @Then("Status code should be {int}")
-    public void statusCodeShouldBe(int statusCode) {
-        SerenityRest.then()
-                .statusCode(statusCode);
-    }
+//    @Then("Status code should be {int}")
+//    public void statusCodeShouldBe(int statusCode) {
+//        SerenityRest.then()
+//                .statusCode(statusCode);
+//    }
 
     @Given("Verification users by id {int} and json request body {string}")
     public void verificationUsersById(int id, String json) {
@@ -107,11 +107,11 @@ public class VerificationsStepDef {
         verificationsAPI.getVerificationProposalInvalid(status, page);
     }
 
-    @And("Response body message was {string}")
-    public void responseBodyMessageWas(String message) {
-        SerenityRest.and()
-                .body(InbuscapResponses.MESSAGE,equalTo(message));
-    }
+//    @And("Response body message was {string}")
+//    public void responseBodyMessageWas(String message) {
+//        SerenityRest.and()
+//                .body(InbuscapResponses.MESSAGE,equalTo(message));
+//    }
 
     @And("Validate Top up json schema {string}")
     public void validateTopUpJsonSchema(String json) {

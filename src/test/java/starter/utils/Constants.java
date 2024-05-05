@@ -14,7 +14,7 @@ public class Constants {
         public static String IMAGE = FORM + "/IMAGE/";
         public static String PROPOSAL = FORM + "/PROPOSAL/";
         public static String REPORT = FORM + "/REPORT/";
-        public static String TOKEN = "";
+        public static String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MzA4MzcsImlhdCI6MTcxNDkyMDAzNywiaWQiOiIxMTMiLCJpc19hY3RpdmUiOjEsImlzX2FkbWluIjpmYWxzZX0.83KL_309TdNVD7e-qqbltSLdEqqMx_gbVGJix1N1xA4";
         public static String TOKEN_USER = "Bearer " + TOKEN;
     }
 
