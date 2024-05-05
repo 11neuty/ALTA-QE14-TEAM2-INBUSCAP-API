@@ -101,6 +101,382 @@
             "status",
             "collected"
           ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "collected": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "updatedAt",
+            "title",
+            "image",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "collected"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "collected": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "updatedAt",
+            "title",
+            "image",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "collected"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "collected": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "updatedAt",
+            "title",
+            "image",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "collected"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "collected": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "updatedAt",
+            "title",
+            "image",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "collected"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "collected": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "updatedAt",
+            "title",
+            "image",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "collected"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "collected": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "updatedAt",
+            "title",
+            "image",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "collected"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "collected": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "updatedAt",
+            "title",
+            "image",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "collected"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "collected": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "updatedAt",
+            "title",
+            "image",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "collected"
+          ]
         }
       ]
     },

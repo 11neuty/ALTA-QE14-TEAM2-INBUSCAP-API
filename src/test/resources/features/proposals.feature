@@ -6,14 +6,14 @@ Feature: PROPOSALS
   #POSITIVE TEST CASE
   @Test
   Scenario: Create new proposals with valid multipart data form
-    Given   Create proposals by multipart data form image "cupangImage.jpg", title "Ikan hias jakarta", description "Jualan ikan hebat", capital 100000000, share 10, proposal "CupangProposal.pdf"
+    Given   Create proposals by multipart data form image "cupangImage.jpg", title "Ikan Lele Oji", description "Jualan ikan hebat", capital 100000000, share 10, proposal "CupangProposal.pdf"
     When    Send request create proposal
-    Then    Status code should be 201
-    And     Response body message should be "New Proposal Added Successfully"
+    Then    Status code should be 200
+    And     Response body message should be "success create post"
     And     Validate json schema proposals "ValidatePostProposals.json"
 
   Scenario: Create new business report and profit share by valid multipart form data
-    Given   Create new report by multipart form data proposal_id 39, date "8 januari", document "cupangReport.pdf", amount 500
+    Given   Create new report by multipart form data proposal_id 41, date "8 januari", document "cupangReport.pdf", amount 500
     When    Send request create report
     Then    Status code should be 201
     And     Response body message should be "New Report Added Successfully"
@@ -48,13 +48,13 @@ Feature: PROPOSALS
     When    Send request get myproposals
     Then    Status code should be 200
     And     Response body message should be "Successfully Get All MyProposals"
-    And     Validate json schema proposals "ValidateGetMyProposal.json"
+    And     Validate json schema proposals "ValidateGetMyProposals.json"
 
   Scenario: Get proposals with valid proposals id
-    Given   Get proposals with id 39
+    Given   Get proposals with id 41
     When    Send request get proposals by id
     Then    Status code should be 200
-    And     Response body message should be "Successfully Get Detail Proposal"
+    And     Response body message should be "success get detail post"
     And     Validate json schema proposals "ValidateGetProposalsById.json"
 
 

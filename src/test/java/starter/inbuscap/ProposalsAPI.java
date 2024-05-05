@@ -37,15 +37,14 @@ public class ProposalsAPI {
     @Step("Create proposals by multipart data")
     public void createProposals(File image, String title, String desc, int capital, int share, File proposal){
         SerenityRest.given().log().all()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MjI2NDYsImlhdCI6MTcxNDkxMTg0NiwiaWQiOiIxMTMiLCJpc19hY3RpdmUiOjEsImlzX2FkbWluIjpmYWxzZX0.x6oZjRgXXZ3zQxmC-QyfURBrYvyvDmLAyMeOvArY7y4")
                 .contentType("multipart/form-data")
-                .multiPart("file", image)
+                .multiPart("image", image)
                 .multiPart("title", title)
                 .multiPart("description", desc)
                 .multiPart("capital", capital)
                 .multiPart("share", share)
-                .multiPart("proposal", proposal)
-                .post(ProposalsAPI.PROPOSALS);
+                .multiPart("proposal", proposal);
     }
     @Step("Create report by multipart form data")
     public void createReport(int proposal_id, String date, File report, int amount){
