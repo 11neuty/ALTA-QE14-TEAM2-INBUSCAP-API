@@ -49,8 +49,8 @@ public class UsersStepDef {
                 .post(UsersAPI.LOGIN_USERS);
         JsonPath jsonpath = response.jsonPath();
         String token = jsonpath.get("data.token");
-        Constants.TOKEN = token;
         System.out.println(token);
+        Constants.TOKEN = token;
 
     }
     //GET

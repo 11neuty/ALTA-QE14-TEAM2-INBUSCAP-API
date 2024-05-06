@@ -13,12 +13,17 @@ Feature: Users
 
    #LOGIN ACCOUNT
   @Test
-  Scenario: As user i can login with valid email or phone number
-    Given Login user by json "UserDataLoginRecipient.json"
-    When  Send request login users
-    Then  Status code should be 200
-    And   Response body message should be "Login Successfully"
-    And   Validate json schema "ValidatePostLoginUsers.json"
+  Scenario Outline: As user i can login with valid email or phone number
+    Given Login user by json <json>
+    When Send request login users
+    Then Status code should be <statusCode>
+    And Response body message should be <msg>
+    And Validate json schema <json1>
+    Examples:
+      | json                          | statusCode | msg                  | json1                         |
+      | "UserDataLoginRecipient.json" | 200        | "Login Successfully" | "ValidatePostLoginUsers.json" |
+      | "UserDataLoginAdmin.json"     | 200        | "Login Successfully" | "ValidatePostLoginUsers.json" |
+      | "UserDataLoginInvestor.json"  | 200        | "Login Successfully" | "ValidatePostLoginUsers.json" |
 
 
   @Test
