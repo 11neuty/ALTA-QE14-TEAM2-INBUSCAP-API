@@ -3,6 +3,7 @@ package starter.inbuscap;
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
+import starter.stepdef.UsersStepDef;
 import starter.utils.Constants;
 
 import java.io.File;
@@ -23,7 +24,7 @@ public class UsersAPI {
     @Step("Get users with valid page")
     public void getUsersWithValidPage(String path){
         SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "Bearer " + UsersStepDef.TOKEN_RECIPIENT)
                 .pathParam("path", path);
 
 

@@ -13,6 +13,7 @@ import starter.inbuscap.InbuscapResponses;
 import starter.inbuscap.UsersAPI;
 import starter.utils.Constants;
 
+import javax.swing.plaf.PanelUI;
 import java.io.File;
 
 import static org.hamcrest.Matchers.equalTo;
@@ -20,6 +21,9 @@ import static org.hamcrest.Matchers.equalTo;
 public class UsersStepDef {
     @Steps
     UsersAPI usersAPI;
+    public static String TOKEN_RECIPIENT;
+    public static String TOKEN_ADMIN;
+    public static String TOKEN_INVESTOR;
 
     //POST
     @Given("Create user by json {}")
@@ -43,14 +47,27 @@ public class UsersStepDef {
 
     }
 
-    @When("Send request login users")
-    public void sendRequestLoginUsers() {
+    @When("Send request login users {string}")
+    public void sendRequestLoginUsers(String role) {
         Response response =  SerenityRest.when()
                 .post(UsersAPI.LOGIN_USERS);
         JsonPath jsonpath = response.jsonPath();
         String token = jsonpath.get("data.token");
-        System.out.println(token);
-        Constants.TOKEN = token;
+        if(role.equals("recipient")){
+            System.out.println("ini token recipient" + token);
+            TOKEN_RECIPIENT = token;
+        }
+        else if(role.equals("admin")){
+            System.out.println("ini token admin" + token);
+            TOKEN_ADMIN = token;
+        }
+        else if(role.equals("investor")){
+            System.out.println("ini token investor" + token);
+            TOKEN_INVESTOR = token;
+        }
+        else{
+            System.out.println("User not found");
+        }
 
     }
     //GET
