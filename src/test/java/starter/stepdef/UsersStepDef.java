@@ -24,6 +24,7 @@ public class UsersStepDef {
     public static String TOKEN_RECIPIENT;
     public static String TOKEN_ADMIN;
     public static String TOKEN_INVESTOR;
+    public static String TOKEN_DELETE;
 
     //POST
     @Given("Create user by json {}")
@@ -65,9 +66,13 @@ public class UsersStepDef {
             System.out.println("ini token investor" + token);
             TOKEN_INVESTOR = token;
         }
+        else if(role.equals("delete")){
+            System.out.println("ini token hapus" + token);
+        }
         else{
             System.out.println("User not found");
         }
+
 
     }
     //GET

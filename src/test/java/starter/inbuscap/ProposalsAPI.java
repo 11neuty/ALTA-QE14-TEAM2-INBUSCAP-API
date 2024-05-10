@@ -20,10 +20,22 @@ public class ProposalsAPI {
 //                .header("Authorization", Constants.TOKEN_USER)
                 .pathParam("param", page);
     }
+    @Step("Get proposals by invalid path and parameter")
+    public void getProposalsByInvalidPathAndParam(String page){
+        SerenityRest.given()
+//                .header("Authorization", Constants.TOKEN_USER)
+                .pathParam("param", page);
+    }
 
 
     @Step("Get my proposals by param")
     public void getProposalsByParam(int param){
+        SerenityRest.given()
+                .header("Authorization", "Bearer " + UsersStepDef.TOKEN_RECIPIENT)
+                .pathParam("param", param);
+    }
+    @Step("Get my proposals by invalid param")
+    public void getProposalsByInvalidParam(String param){
         SerenityRest.given()
                 .header("Authorization", "Bearer " + UsersStepDef.TOKEN_RECIPIENT)
                 .pathParam("param", param);
@@ -48,6 +60,18 @@ public class ProposalsAPI {
                 .multiPart("share", share)
                 .multiPart("proposal", proposal);
     }
+    @Step("Create proposals by multipart data")
+    public void createProposalsInvalid(File image, int title, String desc, int capital, int share, File proposal){
+        SerenityRest.given().log().all()
+                .header("Authorization","Bearer " + UsersStepDef.TOKEN_RECIPIENT)
+                .contentType("multipart/form-data")
+                .multiPart("image", image)
+                .multiPart("title", title)
+                .multiPart("description", desc)
+                .multiPart("capital", capital)
+                .multiPart("share", share)
+                .multiPart("proposal", proposal);
+    }
     @Step("Create report by multipart form data")
     public void createReport(int proposal_id, String date, File report, int amount){
         SerenityRest.given().log().all()
@@ -61,7 +85,21 @@ public class ProposalsAPI {
 
     }
     @Step("Put proposal by id and multipart form data")
-    public void putProposal(int proposals_id, File image, String title, String desc, int capital, File proposal ){
+    public void putProposal(int proposals_id, File image, String title, String desc, int capital, int share, File proposal){
+        SerenityRest.given().log().all()
+                .header("Authorization", "Bearer " + UsersStepDef.TOKEN_RECIPIENT)
+                .pathParam("proposals_id", proposals_id)
+                .contentType("multipart/form-data")
+                .multiPart("image", image)
+                .multiPart("title", title)
+                .multiPart("description", desc)
+                .multiPart("capital", capital)
+                .multiPart("share", share)
+                .multiPart("proposal", proposal);
+
+    }
+    @Step("Put proposal by invalid id and multipart form data")
+    public void putProposalInvalid(int proposals_id, File image, int title, String desc, int capital, File proposal ){
         SerenityRest.given().log().all()
                 .header("Authorization", "Bearer " + UsersStepDef.TOKEN_RECIPIENT)
                 .pathParam("proposals_id", proposals_id)

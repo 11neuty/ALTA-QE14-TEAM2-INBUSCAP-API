@@ -3,16 +3,16 @@ Feature: Users
 
   #CREATE ACCOUNT
    #POSITIVE TEST CASE
-  @Inbuscap
+  @Inbuscap1
   Scenario: As user i can add new user with valid json
-    Given Create user by json DataCreateUsers1.json
+    Given Create user by json DataCreateUsers2.json
     When  Send request create users
     Then  Status code should be 201
     And   Response body message should be "Successful user registration"
     And   Validate json schema "ValidatePostCreateUsers.json"
 
    #LOGIN ACCOUNT
-  @Inbuscap
+  @Inbuscap1
   Scenario Outline: As user i can login with valid email or phone number
     Given Login user by json <json>
     When Send request login users "<role>"
@@ -20,10 +20,11 @@ Feature: Users
     And Response body message should be <msg>
     And Validate json schema <json1>
     Examples:
-      | json                          | statusCode | msg                  | json1                         | role |
+      | json                          | statusCode | msg                  | json1                         | role      |
       | "UserDataLoginRecipient.json" | 200        | "Login Successfully" | "ValidatePostLoginUsers.json" | recipient |
-      | "UserDataLoginAdmin.json"     | 200        | "Login Successfully" | "ValidatePostLoginUsers.json" | admin |
-      | "UserDataLoginInvestor.json"  | 200        | "Login Successfully" | "ValidatePostLoginUsers.json" | investor |
+      | "UserDataLoginAdmin.json"     | 200        | "Login Successfully" | "ValidatePostLoginUsers.json" | admin     |
+      | "UserDataLoginInvestor.json"  | 200        | "Login Successfully" | "ValidatePostLoginUsers.json" | investor  |
+      | "UserDataLoginDelete.json"    | 200        | "Login Successfully" | "ValidatePostLoginUser.json"  | delete    |
 
 
   @Inbuscap
@@ -61,7 +62,7 @@ Feature: Users
 @Inbuscap
   #POSITIVE TEST CASE
   Scenario: Update users with valid multipart form data
-    Given Update data with valid multipart form data; full name "recipient", email "recipient@gmail.com", phone number "085799394557", password "pass12345", ktp "3389785684748889", npwp "3326160801010021", avatar "selfie.jpg"
+    Given Update data with valid multipart form data; full name "Lisa Cantik", email "recipient@gmail.com", phone number "081234567890", password "pass12345", ktp "3325456987588845", npwp "2254759868523332", avatar "selfie.jpg"
     When  Send request update data
     Then  Status code should be 200
     And   Response body message should be "successfully updated user"
@@ -78,12 +79,12 @@ Feature: Users
 
 #DELETE --------------------------------------------------------------------------------------------------------
 @Inbuscaps
-#  #POSITIVE TEST CASE
-#  Scenario: Delete user with valid path
-#    Given Delete user with path "users"
-#    When  Send request delete users
-#    And   Response body message should be "Successfully Delete User"
-#    Then  Status code should be 200
+  #POSITIVE TEST CASE
+  Scenario: Delete user with valid path
+    Given Delete user with path "users"
+    When  Send request delete users
+    And   Response body message should be "Successfully Delete User"
+    Then  Status code should be 200
 
   #NEGATIVE TEST CASE
 @Inbuscap

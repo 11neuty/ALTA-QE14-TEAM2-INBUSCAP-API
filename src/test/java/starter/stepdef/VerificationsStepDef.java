@@ -30,7 +30,7 @@ public class VerificationsStepDef {
     @When("Send request verification")
     public void sendRequestVerification() {
         SerenityRest.when()
-                .put(VerificationsAPI.USERS);
+                .put(VerificationsAPI.VERIF_USERS);
     }
 
 //    @Then("Status code should be {int}")
@@ -39,19 +39,19 @@ public class VerificationsStepDef {
 //                .statusCode(statusCode);
 //    }
 
-    @Given("Verification users by id {int} and json request body {string}")
+    @Given("Verification users by status {int} and json request body {string}")
     public void verificationUsersById(int id, String json) {
-        File jsonFile = new File(Constants.REQ_BODY + "Verifications/"+ json);
+        File jsonFile = new File(Constants.REQ_BODY + "Verifications\\"+ json);
         verificationsAPI.verificationByIdAndReqBody(id, jsonFile);
     }
 
     @When("Send request verification user by id")
     public void sendRequestVerificationUserById() {
         SerenityRest.when()
-                .post(VerificationsAPI.USERS_ID);
+                .put(VerificationsAPI.USERS);
     }
 
-    @Given("Verification users by proposals id")
+    @Given("Verification users by proposals id {} and body {string}")
     public void verificationUsersByProposalsId(int proposal_id, String json) {
         File jsonFile = new File(Constants.REQ_BODY + "Verifications/" + json);
         verificationsAPI.verficationByProposalId(proposal_id,jsonFile);
@@ -61,7 +61,7 @@ public class VerificationsStepDef {
     @When("Request verification user by proposals id")
     public void requestVerificationUserByProposalsId() {
         SerenityRest.when()
-                .post(VerificationsAPI.PROPOSALS_ID);
+                .put(VerificationsAPI.PROPOSALS_ID);
     }
 
     @Given("Get verification with valid parameter status {int} and page {int}")

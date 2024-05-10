@@ -21,6 +21,12 @@ public class ProposalsStepDef {
         File proposalFile = new File(Constants.PROPOSAL + proposal);
         proposalsAPI.createProposals(imageFile, title, desc, capital, share, proposalFile);
     }
+    @Given("Create proposals by invalid multipart data form image {string}, title {int}, description {string}, capital {int}, share {int}, proposal {string}")
+    public void createProposalsByInvalidMultipartDataFormImageTitleDescriptionCapitalShareProposal(String image, int title, String desc, int capital, int share, String proposal) {
+        File imageFile = new File(Constants.IMAGE + image);
+        File proposalFile = new File(Constants.PROPOSAL + proposal);
+        proposalsAPI.createProposalsInvalid(imageFile, title, desc, capital, share, proposalFile);
+    }
 
     @When("Send request create proposal")
     public void sendRequestCreateProposal() {
@@ -48,6 +54,10 @@ public class ProposalsStepDef {
     public void getProposalsWithPathAndParametersPage(int page) {
         proposalsAPI.getProposalsByPathAndParam(page);
     }
+    @Given("Get proposals with invalid parameters page {string}")
+    public void getProposalsWithPathAndParametersPage(String page) {
+        proposalsAPI.getProposalsByInvalidPathAndParam(page);
+    }
 
     @When("Send request get proposals")
     public void sendRequestGetProposals() {
@@ -58,6 +68,10 @@ public class ProposalsStepDef {
     @Given("Get myproposals with param {int}")
     public void getMyproposalsWithPath(int param) {
         proposalsAPI.getProposalsByParam(param);
+    }
+    @Given("Get myproposals with invalid param {}")
+    public void getMyproposalsWithInvalidPath(String param) {
+        proposalsAPI.getProposalsByInvalidParam(param);
     }
 
     @When("Send request get myproposals")
@@ -78,11 +92,17 @@ public class ProposalsStepDef {
     }
 
     // PUT PROPOSALS
-    @Given("Edit proposal by proposal id {int} and multipart form data image {string}, title {string}, description {string}, capital {int}, proposal {string}")
-    public void editProposalByProposalIdAndMulupartFormDataImageTitleDescriptionCapitalProposal(int proposal_id, String image, String title, String desc, int capital, String proposal) {
+    @Given("Edit proposal by proposal id {int} and multipart form data image {string}, title {string}, description {string}, capital {int}, share {int}, proposal {string}")
+    public void editProposalByProposalIdAndMulupartFormDataImageTitleDescriptionCapitalProposal(int proposal_id, String image, String title, String desc, int capital, int share, String proposal) {
         File imageFile = new File(Constants.IMAGE + image);
         File proposalFile = new File(Constants.PROPOSAL + proposal);
-        proposalsAPI.putProposal(proposal_id, imageFile, title, desc, capital, proposalFile);
+        proposalsAPI.putProposal(proposal_id, imageFile, title, desc, capital, share, proposalFile);
+    }
+    @Given("Edit proposal by invalid proposal id {int} and multipart form data image {string}, title {int}, description {string}, capital {int}, proposal {string}")
+    public void editProposalByInvalidProposalIdAndMulupartFormDataImageTitleDescriptionCapitalProposal(int proposal_id, String image, int title, String desc, int capital, String proposal) {
+        File imageFile = new File(Constants.IMAGE + image);
+        File proposalFile = new File(Constants.PROPOSAL + proposal);
+        proposalsAPI.putProposalInvalid(proposal_id, imageFile, title, desc, capital, proposalFile);
     }
 
     @When("Send request edit proposal")

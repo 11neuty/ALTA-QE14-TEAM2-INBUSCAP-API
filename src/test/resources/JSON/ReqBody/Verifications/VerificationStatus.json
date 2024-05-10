@@ -1,0 +1,472 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "handphone": {
+              "type": "string"
+            },
+            "ktp": {
+              "type": "string"
+            },
+            "npwp": {
+              "type": "string"
+            },
+            "is_active": {
+              "type": "integer"
+            },
+            "photo_ktp": {
+              "type": "string"
+            },
+            "photo_npwp": {
+              "type": "string"
+            },
+            "photo_selfie": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "fullname",
+            "handphone",
+            "ktp",
+            "npwp",
+            "is_active",
+            "photo_ktp",
+            "photo_npwp",
+            "photo_selfie"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "handphone": {
+              "type": "string"
+            },
+            "ktp": {
+              "type": "string"
+            },
+            "npwp": {
+              "type": "string"
+            },
+            "is_active": {
+              "type": "integer"
+            },
+            "photo_ktp": {
+              "type": "string"
+            },
+            "photo_npwp": {
+              "type": "string"
+            },
+            "photo_selfie": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "fullname",
+            "handphone",
+            "ktp",
+            "npwp",
+            "is_active",
+            "photo_ktp",
+            "photo_npwp",
+            "photo_selfie"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "handphone": {
+              "type": "string"
+            },
+            "ktp": {
+              "type": "string"
+            },
+            "npwp": {
+              "type": "string"
+            },
+            "is_active": {
+              "type": "integer"
+            },
+            "photo_ktp": {
+              "type": "string"
+            },
+            "photo_npwp": {
+              "type": "string"
+            },
+            "photo_selfie": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "fullname",
+            "handphone",
+            "ktp",
+            "npwp",
+            "is_active",
+            "photo_ktp",
+            "photo_npwp",
+            "photo_selfie"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "handphone": {
+              "type": "string"
+            },
+            "ktp": {
+              "type": "string"
+            },
+            "npwp": {
+              "type": "string"
+            },
+            "is_active": {
+              "type": "integer"
+            },
+            "photo_ktp": {
+              "type": "string"
+            },
+            "photo_npwp": {
+              "type": "string"
+            },
+            "photo_selfie": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "fullname",
+            "handphone",
+            "ktp",
+            "npwp",
+            "is_active",
+            "photo_ktp",
+            "photo_npwp",
+            "photo_selfie"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "handphone": {
+              "type": "string"
+            },
+            "ktp": {
+              "type": "string"
+            },
+            "npwp": {
+              "type": "string"
+            },
+            "is_active": {
+              "type": "integer"
+            },
+            "photo_ktp": {
+              "type": "string"
+            },
+            "photo_npwp": {
+              "type": "string"
+            },
+            "photo_selfie": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "fullname",
+            "handphone",
+            "ktp",
+            "npwp",
+            "is_active",
+            "photo_ktp",
+            "photo_npwp",
+            "photo_selfie"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "handphone": {
+              "type": "string"
+            },
+            "ktp": {
+              "type": "string"
+            },
+            "npwp": {
+              "type": "string"
+            },
+            "is_active": {
+              "type": "integer"
+            },
+            "photo_ktp": {
+              "type": "string"
+            },
+            "photo_npwp": {
+              "type": "string"
+            },
+            "photo_selfie": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "fullname",
+            "handphone",
+            "ktp",
+            "npwp",
+            "is_active",
+            "photo_ktp",
+            "photo_npwp",
+            "photo_selfie"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "handphone": {
+              "type": "string"
+            },
+            "ktp": {
+              "type": "string"
+            },
+            "npwp": {
+              "type": "string"
+            },
+            "is_active": {
+              "type": "integer"
+            },
+            "photo_ktp": {
+              "type": "string"
+            },
+            "photo_npwp": {
+              "type": "string"
+            },
+            "photo_selfie": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "fullname",
+            "handphone",
+            "ktp",
+            "npwp",
+            "is_active",
+            "photo_ktp",
+            "photo_npwp",
+            "photo_selfie"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "handphone": {
+              "type": "string"
+            },
+            "ktp": {
+              "type": "string"
+            },
+            "npwp": {
+              "type": "string"
+            },
+            "is_active": {
+              "type": "integer"
+            },
+            "photo_ktp": {
+              "type": "string"
+            },
+            "photo_npwp": {
+              "type": "string"
+            },
+            "photo_selfie": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "fullname",
+            "handphone",
+            "ktp",
+            "npwp",
+            "is_active",
+            "photo_ktp",
+            "photo_npwp",
+            "photo_selfie"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "handphone": {
+              "type": "string"
+            },
+            "ktp": {
+              "type": "string"
+            },
+            "npwp": {
+              "type": "string"
+            },
+            "is_active": {
+              "type": "integer"
+            },
+            "photo_ktp": {
+              "type": "string"
+            },
+            "photo_npwp": {
+              "type": "string"
+            },
+            "photo_selfie": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "fullname",
+            "handphone",
+            "ktp",
+            "npwp",
+            "is_active",
+            "photo_ktp",
+            "photo_npwp",
+            "photo_selfie"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "handphone": {
+              "type": "string"
+            },
+            "ktp": {
+              "type": "string"
+            },
+            "npwp": {
+              "type": "string"
+            },
+            "is_active": {
+              "type": "integer"
+            },
+            "photo_ktp": {
+              "type": "string"
+            },
+            "photo_npwp": {
+              "type": "string"
+            },
+            "photo_selfie": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "fullname",
+            "handphone",
+            "ktp",
+            "npwp",
+            "is_active",
+            "photo_ktp",
+            "photo_npwp",
+            "photo_selfie"
+          ]
+        }
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "pagination": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer"
+        },
+        "page_size": {
+          "type": "integer"
+        },
+        "total_pages": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "page",
+        "page_size",
+        "total_pages"
+      ]
+    }
+  },
+  "required": [
+    "code",
+    "data",
+    "message",
+    "pagination"
+  ]
+}

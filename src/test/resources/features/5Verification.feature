@@ -2,20 +2,20 @@ Feature: PUT Verification
 
   @Inbuscap
   Scenario: Verifications users send photo valid multipart form data
-    Given   Verification users send multipart data form photo ktp "ktp.jpg" photo npwp "npwp.jpg" photo selfie "photo.jpg"
+    Given   Verification users send multipart data form photo ktp "ktp.jpg" photo npwp "npwp.jpg" photo selfie "selfie.jpg"
     When    Send request verification
-    Then    Status code should be 201
+    Then    Status code should be 200
 
   @Inbuscap
   Scenario: Verifications users by valid id
-    Given   Verification users by id 7 and json request body "json"
+    Given   Verification users by status 113 and json request body "VerificationsJsonReq.json"
     When    Send request verification user by id
     Then    Status code should be 200
 
 
   @Inbuscap
   Scenario: Verifications user by proposals id
-    Given   Verification users by proposals id
+    Given   Verification users by proposals id 86 and body "VerificationsJsonReq.json"
     When    Request verification user by proposals id
     Then    Status code should be 200
 
