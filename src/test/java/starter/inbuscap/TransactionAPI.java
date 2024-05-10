@@ -3,6 +3,7 @@ package starter.inbuscap;
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
+import starter.stepdef.UsersStepDef;
 import starter.utils.Constants;
 
 import java.io.File;
@@ -15,7 +16,7 @@ public class TransactionAPI {
     @Step("Top Up with valid data")
     public void TopUpWithValidData(File json){
         SerenityRest.given()
-                .header("Authorization", "bearer ")
+                .header("Authorization", "Bearer " + UsersStepDef.TOKEN_INVESTOR)
                 .contentType(ContentType.JSON)
                 .body(json);
     }
@@ -23,14 +24,14 @@ public class TransactionAPI {
     @Step("Get transaction")
     public void GetTransaction(String returns){
         SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "Bearer " + UsersStepDef.TOKEN_INVESTOR)
                 .pathParam("returns", returns);
     }
 
     @Step("Withdraw with valid data")
     public void WithdrawWithValidData(File json){
         SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "Bearer " + UsersStepDef.TOKEN_INVESTOR)
                 .contentType(ContentType.JSON)
                 .body(json);
     }

@@ -9,6 +9,7 @@ import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.inbuscap.InbuscapResponses;
 import starter.inbuscap.TransactionAPI;
+import starter.inbuscap.UsersAPI;
 import starter.utils.Constants;
 
 import java.io.File;
@@ -19,11 +20,15 @@ public class TransactionStepDef {
 
     @Steps
     TransactionAPI transactionAPI;
+    UsersAPI usersAPI;
+    public static String TOKEN_RECIPIENT;
+    public static String TOKEN_ADMIN;
+    public static String TOKEN_INVESTOR;
 
     //Top Up
     @Given("Top Up with valid data {string}")
     public void topUpWithValidData(String jsonData) {
-        File jsonFile = new File(Constants.REQ_BODY+"/Transaction/"+jsonData);
+        File jsonFile = new File(Constants.REQ_BODY+"Transaction/"+jsonData);
         transactionAPI.TopUpWithValidData(jsonFile);
     }
 

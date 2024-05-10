@@ -39,7 +39,7 @@ public class UsersAPI {
     @Step("Update Data by multipart form data")
     public void UpdateData(String fullname, String email, String number, String password, String ktp, String npwp, File avatar){
         SerenityRest.given().log().all()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "Bearer " + UsersStepDef.TOKEN_RECIPIENT)
                 .contentType("multipart/form-data")
                 .multiPart("fullname", fullname)
                 .multiPart("email", email)

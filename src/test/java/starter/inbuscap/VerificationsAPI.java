@@ -3,6 +3,7 @@ package starter.inbuscap;
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
+import starter.stepdef.UsersStepDef;
 import starter.utils.Constants;
 
 import java.io.File;
@@ -28,14 +29,14 @@ public class VerificationsAPI {
     @Step("Verificaation by id and json body request")
     public void verificationByIdAndReqBody(int id, File json){
         SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "Bearer " + UsersStepDef.TOKEN_ADMIN)
                 .pathParam("user_id", id)
                 .contentType(ContentType.JSON).body(json);
     }
     @Step("Verification by proposal id and json body request")
     public void verficationByProposalId(int id, File json){
         SerenityRest.given()
-                .header("Authorization", Constants.TOKEN_USER)
+                .header("Authorization", "Bearer " + UsersStepDef.TOKEN_ADMIN)
                 .pathParam("proposal_id", id)
                 .contentType(ContentType.JSON).body(json);
     }
@@ -43,7 +44,7 @@ public class VerificationsAPI {
     @Step("Get verification with valid parameter status and page")
     public void getVerificationValid(int status, int page){
         SerenityRest.given()
-                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4MTUsImlhdCI6MTcxNDkwOTAxNSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.kUClF0nNMyOHBXYHV8cZ9tv0hXr9KiEsOu3y6rpPg2M")
+                .header("Authorization", "Bearer " + UsersStepDef.TOKEN_ADMIN)
                 .pathParam("status", status)
                 .pathParam("page", page);
     }
@@ -51,7 +52,7 @@ public class VerificationsAPI {
     @Step("Get verification with invalid parameter status and page")
     public void getVerificationInvalid(String status, String page){
         SerenityRest.given()
-                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4MTUsImlhdCI6MTcxNDkwOTAxNSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.kUClF0nNMyOHBXYHV8cZ9tv0hXr9KiEsOu3y6rpPg2M")
+                .header("Authorization", "Bearer " + UsersStepDef.TOKEN_ADMIN)
                 .pathParam("status", status)
                 .pathParam("page", page);
     }
@@ -59,21 +60,21 @@ public class VerificationsAPI {
     @Step("Get verification with valid proposal id")
     public void getVerificationValidProposalId(int proposal_id){
         SerenityRest.given()
-                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4MTUsImlhdCI6MTcxNDkwOTAxNSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.kUClF0nNMyOHBXYHV8cZ9tv0hXr9KiEsOu3y6rpPg2M")
+                .header("Authorization", "Bearer " + UsersStepDef.TOKEN_ADMIN)
                 .pathParam("proposals_id", proposal_id);
     }
 
     @Step("Get verification with invalid proposal id")
     public void getVerificationInvalidProposalId(String proposal_id){
         SerenityRest.given()
-                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4MTUsImlhdCI6MTcxNDkwOTAxNSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.kUClF0nNMyOHBXYHV8cZ9tv0hXr9KiEsOu3y6rpPg2M")
+                .header("Authorization", "Bearer " + UsersStepDef.TOKEN_ADMIN)
                 .pathParam("proposals_id", proposal_id);
     }
 
     @Step("Get verification proposal with valid parameter status and page")
     public void getVerificationProposalValid(int status, int page){
         SerenityRest.given()
-                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4MTUsImlhdCI6MTcxNDkwOTAxNSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.kUClF0nNMyOHBXYHV8cZ9tv0hXr9KiEsOu3y6rpPg2M")
+                .header("Authorization", "Bearer " + UsersStepDef.TOKEN_ADMIN)
                 .pathParam("status", status)
                 .pathParam("page", page);
 
@@ -82,7 +83,7 @@ public class VerificationsAPI {
     @Step("Get verification proposal with invalid parameter status and page")
     public void getVerificationProposalInvalid(String status, String page){
         SerenityRest.given()
-                .header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ5MTk4MTUsImlhdCI6MTcxNDkwOTAxNSwiaWQiOiI0IiwiaXNfYWN0aXZlIjoxLCJpc19hZG1pbiI6dHJ1ZX0.kUClF0nNMyOHBXYHV8cZ9tv0hXr9KiEsOu3y6rpPg2M")
+                .header("Authorization", "Bearer " + UsersStepDef.TOKEN_ADMIN)
                 .pathParam("status", status)
                 .pathParam("page", page);
     }
