@@ -26,7 +26,7 @@ public class UsersStepDef {
     public static String TOKEN_INVESTOR;
 
     //POST
-    @Given("Create user by json {}")
+    @Given("Create user by json {string}")
     public void createUserByValidJson(String json) {
         File jsonFile = new File(Constants.REQ_BODY + "Users/"+ json);
         usersAPI.createUsers(jsonFile);

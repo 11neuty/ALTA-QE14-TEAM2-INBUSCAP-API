@@ -39,9 +39,9 @@ public class VerificationsStepDef {
 //                .statusCode(statusCode);
 //    }
 
-    @Given("Verification users by status {int} and json request body {string}")
+    @Given("Verification users by id {int} and json request body {string}")
     public void verificationUsersById(int id, String json) {
-        File jsonFile = new File(Constants.REQ_BODY + "Verifications\\"+ json);
+        File jsonFile = new File(Constants.REQ_BODY + "Verifications/"+ json);
         verificationsAPI.verificationByIdAndReqBody(id, jsonFile);
     }
 

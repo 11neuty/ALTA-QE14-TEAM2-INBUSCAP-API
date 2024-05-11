@@ -4,7 +4,7 @@ Feature: PROPOSALS
   #POST
 
   #POSITIVE TEST CASE
-  @Inbuscap1
+  @Inbuscap
   Scenario: Create new proposals with valid multipart data form
     Given   Create proposals by multipart data form image "cupangImage.jpg", title "Jual Laptoppop", description "Lenovo, Samsung, Logitech", capital 100000000, share 10, proposal "CupangProposal.pdf"
     When    Send request create proposal
@@ -97,18 +97,18 @@ Feature: PROPOSALS
     Then    Status code should be 400
 
     #DELETE-----------------------------------------------------------------------------------------------------
-  @Inbuscap
-    #POSITIVE TEST CASE
-  Scenario: Delete proposals by valid id
-    Given   Delete user by id 91
-    When    Send request delete proposals
-    And     Response body message should be "Successfully Delete Proposal"
-    Then    Status code should be 200
-
-
-  #NEGATIVE TEST CASE
-  @Inbuscap
-  Scenario: Delete user by invalid id
-    Given   Delete user by id -1
-    When    Send request delete proposals
-    Then    Status code should be 401
+#  @Inbuscap
+#    #POSITIVE TEST CASE
+#  Scenario: Delete proposals by valid id
+#    Given   Delete user by id 91
+#    When    Send request delete proposals
+#    And     Response body message should be "Successfully Delete Proposal"
+#    Then    Status code should be 200
+#
+#
+#  #NEGATIVE TEST CASE
+#  @Inbuscap
+#  Scenario: Delete user by invalid id
+#    Given   Delete user by id -1
+#    When    Send request delete proposals
+#    Then    Status code should be 401

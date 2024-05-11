@@ -47,8 +47,7 @@ public class UsersAPI {
                 .multiPart("password", password)
                 .multiPart("ktp", ktp)
                 .multiPart("npwp", npwp)
-                .multiPart("avatar", avatar)
-                .post(UsersAPI.CREATE_USERS);
+                .multiPart("avatar", avatar);
 
     }
     @Step("Delete User with valid path")

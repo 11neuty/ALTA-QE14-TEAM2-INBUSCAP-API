@@ -76,7 +76,6 @@ Feature: Transaction
     Then Status code should be 400
     And Response body message was "the data sent is incorrect"
 
-
   @Inbuscap
   Scenario: Withdraw with invalid amount
     Given Withdraw with invalid amount "WithdrawInvalid3.json"
