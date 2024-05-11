@@ -24,7 +24,6 @@ Feature: Users
       | "UserDataLoginRecipient.json" | 200        | "Login Successfully" | "ValidatePostLoginUsers.json" | recipient |
       | "UserDataLoginAdmin.json"     | 200        | "Login Successfully" | "ValidatePostLoginUsers.json" | admin     |
       | "UserDataLoginInvestor.json"  | 200        | "Login Successfully" | "ValidatePostLoginUsers.json" | investor  |
-      | "UserDataLoginDelete.json"    | 200        | "Login Successfully" | "ValidatePostLoginUser.json"  | delete    |
 
 
   @Inbuscap

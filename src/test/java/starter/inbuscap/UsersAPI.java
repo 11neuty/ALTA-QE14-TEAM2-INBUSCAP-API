@@ -54,7 +54,7 @@ public class UsersAPI {
     @Step("Delete User with valid path")
     public void DeleteUser(String path){
         SerenityRest.given()
-                .header("Authorization","Bearer " + UsersStepDef.TOKEN_DELETE)
+                .header("Authorization",Constants.TOKEN_USER)
                 .pathParam("path",path);
     }
 }
