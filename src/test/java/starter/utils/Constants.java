@@ -20,3 +20,4 @@ public class Constants {
         public static String TOKEN_USER = "Bearer " + UsersStepDef.TOKEN_RECIPIENT;
     }
 
+}
