@@ -1,0 +1,246 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "collected": {
+              "type": "integer"
+            },
+            "amount": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "updatedAt",
+            "title",
+            "image",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "collected",
+            "amount"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "collected": {
+              "type": "integer"
+            },
+            "amount": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "updatedAt",
+            "title",
+            "image",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "collected",
+            "amount"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "collected": {
+              "type": "integer"
+            },
+            "amount": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "updatedAt",
+            "title",
+            "image",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "collected",
+            "amount"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "capital": {
+              "type": "integer"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "collected": {
+              "type": "integer"
+            },
+            "amount": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "updatedAt",
+            "title",
+            "image",
+            "description",
+            "capital",
+            "share",
+            "status",
+            "collected",
+            "amount"
+          ]
+        }
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "pagination": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer"
+        },
+        "page_size": {
+          "type": "integer"
+        },
+        "total_pages": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "page",
+        "page_size",
+        "total_pages"
+      ]
+    }
+  },
+  "required": [
+    "code",
+    "data",
+    "message",
+    "pagination"
+  ]
+}
